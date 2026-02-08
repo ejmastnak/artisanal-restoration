@@ -1,0 +1,31 @@
+---
+import client from "@tina/__generated__/client";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Index from "@tina/pages/Index/Index.tsx";
+import { optimizeTinaImages } from '@/lib/optimizeTinaImages';
+
+const content = await client.queries.myHomePage({ relativePath: "index.json" });
+const head = content.data.homePage.head;
+
+await optimizeTinaImages(content, [
+  {
+    srcPath: ['data', 'homePage', 'heroImg'],
+    altPath: ['data', 'homePage', 'heroImgAlt'],
+    width: 700,
+  },
+  {
+    srcPath: ['data', 'homePage', 'aboutImage'],
+    altPath: ['data', 'homePage', 'aboutImageAlt'],
+    width: 800,
+  },
+  {
+    srcPath: ['data', 'homePage', 'servicesImage'],
+    altPath: ['data', 'homePage', 'servicesImageAlt'],
+    width: 800,
+  },
+]);
+---
+
+<BaseLayout head={head}>
+  <Index {...content} client:tina />
+</BaseLayout>

@@ -1,0 +1,16 @@
+---
+import client from "@tina/__generated__/client";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Testimonials from "@tina/pages/Testimonials/Index.tsx";
+
+const content = await client.queries.myTestimonialsPage({ relativePath: "index.json" });
+const head = content.data.testimonialsPage.head;
+
+const testimonialsResponse = await client.queries.testimonialConnection();
+const testimonials = testimonialsResponse.data.testimonialConnection.edges.map((edge) => edge.node);
+
+---
+
+<BaseLayout head={head}>
+  <Testimonials {...content} testimonials={testimonials} client:tina />
+</BaseLayout>

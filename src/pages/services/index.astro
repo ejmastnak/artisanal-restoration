@@ -1,0 +1,23 @@
+---
+import client from "@tina/__generated__/client";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Services from "@tina/pages/Services/Index.tsx";
+import { optimizeTinaImages } from '@/lib/optimizeTinaImages';
+
+const content = await client.queries.myServicesPage({ relativePath: "index.json" });
+const head = content.data.servicesPage.head;
+
+await optimizeTinaImages(content, [
+  {
+    srcPath: ['data', 'servicesPage', 'servicesImage'],
+    altPath: ['data', 'servicesPage', 'servicesImageAlt'],
+    width: 800,
+  },
+]);
+
+// TODO programatically optimize all data.servicesPage.servicesList.*.serviceImage in list
+---
+
+<BaseLayout head={head}>
+  <Services {...content} client:tina />
+</BaseLayout>

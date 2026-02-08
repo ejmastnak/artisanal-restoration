@@ -1,0 +1,36 @@
+{
+  "head": {
+    "title": "Home",
+    "description": ""
+  },
+  "heroHeading": "Artisanal  Restoration",
+  "heroDescription": "Restoration, renovation, and maintenance of historic homes in the Central New Jersey area, with a 17-year track record of quality workmanship and happy customers.\n",
+  "heroImage": "/src/assets/img/uploads/anderson-cropped.jpg",
+  "heroImageAlt": "Renovated facade of a large two-story home after extensive rot repair on exterior trim and window frames",
+  "heroButtonText": "More about us",
+  "aboutHeading": "About",
+  "aboutDescription": "Artisanal Restoration is the one-man company of master carpenter and cabinetmaker Randall Basti, and specializes in the restoration, renovation, and maintenance of historic homes in the Central New Jersey area.\n\nRandall has been woodworking since high school and has over three decades of professional experience in carpentry and adjacent trades. After an 5-year detour working as a project manager for Bank of America, where he gained valuable experience in management, administration, and business operations, he opened Artisanal Restoration and has spent 18 successful years serving historic homes in the Central New Jersey area.\n",
+  "aboutImage": "/src/assets/img/uploads/evelyn-flood-restoration/complete.jpg",
+  "aboutImageAlt": "Hallway and kitchen of a 1910 home in Princeton, NJ, fully restored with custom trim after flood damage",
+  "aboutLinkText": "More about us",
+  "servicesHeading": "Services",
+  "servicesSummary": "Artisanal Restoration specializes in the service of historic homes, handling everything from routine maintenance to full-scale renovations. We recognize and adapt to each home's quirks and history on a case-by-case basis, and our work will always be faithful to the time period and unique character of your home.\n",
+  "servicesAdditionalText": "Additional services offered by Artisanal Restoration include:\n\n* Bespoke home additions\n* Custom trim and finish carpentry\n* Stair construction and restoration\n* Service of windows and doors\n* Interior and exterior rot restoration\n* Regular service and maintenance of historic homes\n",
+  "servicesImage": "/src/assets/img/uploads/evelyn-stairs-fineal.jpg",
+  "servicesImageAlt": "A detail image of the finish carpentry on a fineal custom-built for a staircase in a Princeton, NJ home",
+  "servicesLinkText": "Full list of services",
+  "testimonialsHeading": "Testimonials",
+  "testimonialsDescription": " Here is a selection of testimonials about Artisanal Restoration and owner Randall Basti:",
+  "testimonialsLinkText": "More testimonials",
+  "featuredTestimonials": [
+    {
+      "testimonial": "tina/content/testimonials/kathy-l.json"
+    },
+    {
+      "testimonial": "tina/content/testimonials/cara-b.json"
+    },
+    {
+      "testimonial": "tina/content/testimonials/david-c.json"
+    }
+  ]
+}

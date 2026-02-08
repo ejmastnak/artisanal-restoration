@@ -1,0 +1,25 @@
+{
+  "head": {
+    "title": "Portfolio",
+    "description": ""
+  },
+  "h1": "Portfolio",
+  "summary": "Here is a selection of projects representative of work you can expect from Artisanal Restoration—the individual project summaries should showcase some of the attention to details and case-by-case custom work our clients appreciate us for.\n",
+  "featuredProjects": [
+    {
+      "project": "tina/content/projects/evelyn-flood-restoration.json"
+    },
+    {
+      "project": "tina/content/projects/anderson-rot-repair.json"
+    },
+    {
+      "project": "tina/content/projects/evelyn-floor-weave.json"
+    },
+    {
+      "project": "tina/content/projects/evelyn-front-stairs.json"
+    },
+    {
+      "project": "tina/content/projects/deck-restoration.json"
+    }
+  ]
+}

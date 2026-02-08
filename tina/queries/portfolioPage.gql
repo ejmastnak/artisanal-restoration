@@ -1,0 +1,54 @@
+query myPortfolioPage($relativePath: String!) {
+  portfolioPage(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+      _values
+    }
+    ...MyPortfolioPageParts
+  }
+}
+
+fragment MyPortfolioPageParts on PortfolioPage {
+  __typename
+  head {
+    __typename
+    title
+    description
+  }
+
+  h1
+  summary
+  featuredProjects {
+    __typename
+    project {
+      ... on Project {
+        __typename
+        title
+        summary
+        featuredImage
+        featuredImageAlt
+      }
+      ... on Document {
+        _sys {
+          filename
+          basename
+          hasReferences
+          breadcrumbs
+          path
+          relativePath
+          extension
+        }
+        id
+      }
+    }
+  }
+}

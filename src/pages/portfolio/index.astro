@@ -1,0 +1,16 @@
+---
+import client from "@tina/__generated__/client";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Portfolio from "@tina/pages/Portfolio/Index.tsx";
+import { optimizeTinaImages } from '@/lib/optimizeTinaImages';
+
+const content = await client.queries.myPortfolioPage({ relativePath: "index.json" });
+const head = content.data.portfolioPage.head;
+
+// TODO: Optimize featured images of portfolio projects
+// For reference see `/home/ej/Documents/projects/web/juliaelyachar/www/src-tina/src/pages/index.astro`
+---
+
+<BaseLayout head={head}>
+  <Portfolio {...content} client:tina />
+</BaseLayout>

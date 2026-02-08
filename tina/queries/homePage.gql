@@ -1,0 +1,73 @@
+query myHomePage($relativePath: String!) {
+  homePage(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+      _values
+    }
+    ...MyHomePageParts
+  }
+}
+
+fragment MyHomePageParts on HomePage {
+  __typename
+  head {
+    __typename
+    title
+    description
+  }
+
+  heroHeading
+  heroDescription
+  heroImage
+  heroImageAlt
+  heroButtonText
+
+  aboutHeading
+  aboutDescription
+  aboutImage
+  aboutImageAlt
+  aboutLinkText
+
+  servicesHeading
+  servicesImage
+  servicesImageAlt
+  servicesSummary
+  servicesAdditionalText
+  servicesLinkText
+
+  testimonialsHeading
+  testimonialsDescription
+  testimonialsLinkText
+  featuredTestimonials {
+    __typename
+    testimonial {
+      ... on Testimonial {
+        __typename
+        testimonial
+        client
+      }
+      ... on Document {
+        _sys {
+          filename
+          basename
+          hasReferences
+          breadcrumbs
+          path
+          relativePath
+          extension
+        }
+        id
+      }
+    }
+  }
+
+}
