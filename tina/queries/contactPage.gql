@@ -25,12 +25,30 @@ fragment MyContactPageParts on ContactPage {
     description
   }
   h1
-  text
+  intro
+  contactFormHeading
+  contactForm {
+    __typename
+    contactFormNameLabel
+    contactFormNamePlaceholder
+    contactFormMessageLabel
+    contactFormMessagePlaceholder
+    contactFormContactMethodLabel
+    contactFormPhoneOptionLabel
+    contactFormEmailOptionLabel
+    contactFormPhoneLabel
+    contactFormPhonePlaceholder
+    contactFormEmailLabel
+    contactFormEmailPlaceholder
+    contactFormSubmitButtonText
+  }
+  contactDirectlyHeading
+  contactDirectlyText
   emailText
   email
   phoneText
   phone
   phoneMachineReadable
-  nextStepsText
+  nextStepsHeading
   nextStepsBody
 }

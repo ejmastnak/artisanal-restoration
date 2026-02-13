@@ -1,12 +1,26 @@
+import { useState } from "react"
+import type { FormEvent } from "react"
 import { useTina, tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import PageWrapper from '@tina/shared/PageWrapper.tsx'
+import TextInput from "@tina/components/TextInput.tsx"
+import TextArea from "@tina/components/TextArea.tsx"
+import RadioInput from "@tina/components/RadioInput.tsx"
+import InputError from "@tina/components/InputError.tsx"
+import InputLabel from "@tina/components/InputLabel.tsx"
+import PrimaryButton from "@tina/components/PrimaryButton.tsx"
 
 import type { MyContactPageQuery, MyContactPageQueryVariables } from "@tina/__generated__/types";
 type Props = {
   variables: MyContactPageQueryVariables;
   data: MyContactPageQuery;
   query: string;
+};
+
+const mdLinkComponents = {
+  a: (props) => (
+    <a href={props.url} className="text-blue-500 font-medium hover:underline hover:text-blue-600 hover:cursor-pointer">{props.children}</a>
+  ),
 };
 
 export default function ContactPage(props: Props) {
@@ -17,120 +31,176 @@ export default function ContactPage(props: Props) {
   });
   const contactPage = data.contactPage;
 
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [phone, setPhone] = useState("")
+  const [message, setMessage] = useState("")
+  const [emailRequiredMessage, setEmailRequiredMessage] = useState("")
+  const [phoneRequiredMessage, setPhoneRequiredMessage] = useState("")
+
+  const CONTACT_METHOD_PHONE = "phone"
+  const CONTACT_METHOD_EMAIL = "email"
+  const [contactMethod, setContactMethod] = useState(CONTACT_METHOD_PHONE)
+
+  function updateContactMethod(value: string) {
+    setContactMethod(value)
+    setEmailRequiredMessage("")
+    setPhoneRequiredMessage("")
+  }
+
+  function submitForm(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    setEmailRequiredMessage("")
+    setPhoneRequiredMessage("")
+
+    if (!email && contactMethod == CONTACT_METHOD_EMAIL) {
+      setEmailRequiredMessage("Please input your email address.")
+      return
+    } else if (!phone && contactMethod == CONTACT_METHOD_PHONE){
+      setPhoneRequiredMessage("Please input your phone number.")
+      return
+    }
+
+    console.log("Form submitted!");
+  }
+
   return (
     <PageWrapper>
-      <h1 className="text-5xl font-['Latin_Modern_Roman']">{contactPage.h1}</h1>
+      <h1 data-tina-field={tinaField(contactPage, "h1")} className="text-5xl font-['Latin_Modern_Roman']">{contactPage.h1}</h1>
 
-      <div className="mt-8 prose">
-        <p className="mt-4">{contactPage.text}</p>
-
-        <ul className="mt-4 ml-5 list-disc">
-          <li>{contactPage.phoneText} <a className="hover:text-blue-600" href={`tel:${contactPage.phoneMachineReadable}`}>{contactPage.phone}</a> </li>
-          <li>{contactPage.emailText} <a className="hover:text-blue-600" href={`mailto:${contactPage.email}`}>{contactPage.email}</a></li>
-        </ul>
+      {/* Intro message */}
+      <div data-tina-field={tinaField(contactPage, "intro")} className="mt-8 prose text-gray-700 max-w-2xl">
+        <TinaMarkdown content={contactPage.intro} components={mdLinkComponents}/>
       </div>
 
-      {/* <p className="mt-8 text-gray-700 max-w-2xl"> */}
-      {/*   Schedule a consultation or ask questions using the contact form below. */}
-      {/*   We need either your email or phone so we can respond to you; leave whichever you prefer. */}
-      {/* </p> */}
+      {/* Contact form */}
+      <div className="mt-5 relative rounded-xl bg-gray-50 p-5 border border-gray-100 -m-5 overflow-hidden">
 
-      {/* <p className="mt-2 text-lg text-gray-700 max-w-xl"> */}
-      {/*   You can also contact us directly by phone or email—<a href="#contact-directly" className="text-blue-500 hover:underline hover:text-blue-500">see below</a>. */}
-      {/* </p> */}
+        <h2 data-tina-field={tinaField(contactPage, "contactFormHeading")}className="text-3xl font-['Latin_Modern_Roman']">{contactPage.contactFormHeading}</h2>
 
-      {/* <div className="mt-8 relative rounded-xl p-5 -m-5 overflow-hidden"> */}
-      {/**/}
-      {/* Overlay */}
-      {/*   <div className="bg-gray-50/70 absolute inset-0"></div> */}
-      {/**/}
-      {/*   <h2 className="text-3xl font-['Latin_Modern_Roman']" id="contact-directly">Contact form (in development)</h2> */}
-      {/**/}
-      {/*   <form className="mt-4" @submit.prevent="submitForm"> */}
-      {/**/}
-      {/*     <div className="w-full max-w-xl"> */}
-      {/*       <InputLabel for="name" value="Name" /> */}
-      {/*       <TextInput */}
-      {/*       id="name" */}
-      {/*       type="text" */}
-      {/*       className="inline-block w-72" */}
-      {/*       v-model="name" */}
-      {/*       placeholder="Your name" */}
-      {/*       required */}
-      {/*     /> */}
-      {/*     </div> */}
-      {/**/}
-      {/*     <div className="mt-4 w-full max-w-xl"> */}
-      {/*       <InputLabel for="email" value="Email" /> */}
-      {/*       <TextInput */}
-      {/*       id="email" */}
-      {/*       type="email" */}
-      {/*       className="inline-block w-72" */}
-      {/*       placeholder="Your email" */}
-      {/*       v-model="email" */}
-      {/*     /> */}
-      {/*       <InputError className="max-w-xs" message={emailOrPhoneRequiredMessage} /> */}
-      {/*     </div> */}
-      {/**/}
-      {/*     <div className="mt-4 w-full max-w-xl"> */}
-      {/*       <InputLabel for="phone"> */}
-      {/*         <p>Phone number</p> */}
-      {/*         <p className="text-sm -mt-px text-gray-500 !font-normal">Format: (123) 456-7890</p> */}
-      {/*       </InputLabel> */}
-      {/*       <TextInput */}
-      {/*       id="phone" */}
-      {/*       type="tel" */}
-      {/*       pattern="([0-9]{3}) [0-9]{3}-[0-9]{4}" */}
-      {/*       placeholder="(123) 456-7890" */}
-      {/*       className="inline-block w-72" */}
-      {/*       v-model="phone" */}
-      {/*     /> */}
-      {/*       <InputError className="max-w-xs" message={emailOrPhoneRequiredMessage} /> */}
-      {/*     </div> */}
-      {/**/}
-      {/**/}
-      {/*     <div className="mt-5 w-full max-w-xl"> */}
-      {/*       <InputLabel for="message" value="Message" /> */}
-      {/*       <TextArea */}
-      {/*       id="message" */}
-      {/*       placeholder="Your message" */}
-      {/*       className="block w-full h-48 text-sm max-w-xl" */}
-      {/*       v-model="message" */}
-      {/*       required */}
-      {/*     /> */}
-      {/*     </div> */}
-      {/**/}
-      {/*     <PrimaryButton disabled={true} className="mt-5 !cursor-not-allowed" type="submit">Send Message</PrimaryButton> */}
-      {/*   </form> */}
-      {/**/}
-      {/**/}
-      {/**/}
-      {/*   <div className="mt-6 max-w-2xl"> */}
-      {/*       <p className="text-2xl font-['Latin_Modern_Roman']">What happens after I send the form?</p> */}
-      {/*       <div> */}
-      {/*         <p> */}
-      {/*           Randall, the owner of Artisanal Restoration, will receive your message by email. */}
-      {/*           Within a few days, he will respond to you by email or phone to answer any questions, discuss your project, and schedule an on-site consultation. */}
-      {/*           Randall then visits your home, listens to your opinions and preferences, offers his own input and expertise, and together you agree on a plan of action. */}
-      {/*         </p> */}
-      {/**/}
-      {/*         <p className="mt-2"> */}
-      {/*           On small projects Randall may even perform the work on the day of the initial visit. On larger projects, you agree on a work schedule, budget, and estimated completion time. */}
-      {/*           Randall then begins work, communicating with you on a case-by-case basis as the project evolves to inform you about progress and, as needed, changes or improvements to the original plan. */}
-      {/*         </p> */}
-      {/*       </div> */}
-      {/*     </div> */}
-      {/**/}
-      {/*   </div> */}
+        <form data-tina-field={tinaField(contactPage, "contactForm")} className="mt-4" onSubmit={submitForm}>
+          <div className="w-full max-w-xl">
+            <InputLabel htmlFor="name" value={contactPage.contactForm.contactFormNameLabel} />
+            <TextInput
+              id="name"
+              type="text"
+              className="inline-block w-72"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder={contactPage.contactForm.contactFormNamePlaceholder}
+              required
+            />
+          </div>
 
-      {/* <div className="mt-10"> */}
-      {/*   <h2 className="text-3xl font-['Latin_Modern_Roman']" id="contact-directly">Contact us directly</h2> */}
-      {/*   <p className="mt-4"> You can also contact Randall Basti of Artisanal Restoration directly:</p> */}
-      {/*   <ul className="mt-4 ml-5 list-disc"> */}
-      {/*     <li>By phone at <a className="hover:text-blue-600" href="tel:+19087872526">(908) 787 2526</a> </li> */}
-      {/*     <li>By email at <a className="hover:text-blue-600" href="mailto:rbasti@comcast.net">rbasti@comcast.net</a></li> */}
-      {/*   </ul> */}
-      {/* </div> */}
+          <div className="mt-5 w-full max-w-xl">
+            <InputLabel htmlFor="message" value={contactPage.contactForm.contactFormMessageLabel} />
+            <TextArea
+              id="message"
+              className="block w-full h-48 text-sm max-w-xl"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              placeholder={contactPage.contactForm.contactFormMessagePlaceholder}
+              required
+            />
+          </div>
+
+          {/* Contact method */}
+          <div className="mt-5">
+            <fieldset>
+              <legend className="block text-sm font-medium text-gray-700">{contactPage.contactForm.contactFormContactMethodLabel}</legend>
+              <div className="mt-1 space-y-6 sm:flex sm:items-center sm:space-x-8 sm:space-y-0">
+                <RadioInput
+                  id="contact-method-phone"
+                  name="contact-method"
+                  value={CONTACT_METHOD_PHONE}
+                  checked={contactMethod === CONTACT_METHOD_PHONE}
+                  onChange={(e) => updateContactMethod(e.target.value)}
+                  label={contactPage.contactForm.contactFormPhoneOptionLabel}
+                />
+
+                <RadioInput
+                  id="contact-method-email"
+                  name="contact-method"
+                  value={CONTACT_METHOD_EMAIL}
+                  checked={contactMethod === CONTACT_METHOD_EMAIL}
+                  onChange={(e) => updateContactMethod(e.target.value)}
+                  label={contactPage.contactForm.contactFormEmailOptionLabel}
+                />
+
+              </div>
+            </fieldset>
+          </div>
+
+          {/* Email */}
+          {contactMethod == CONTACT_METHOD_EMAIL && 
+            <div className="mt-5 w-full max-w-xl">
+              <InputLabel htmlFor="email" value={contactPage.contactForm.contactFormEmailLabel} />
+              <TextInput
+                id="email"
+                type="email"
+                className="inline-block w-72"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder={contactPage.contactForm.contactFormEmailPlaceholder}
+              />
+              <InputError
+                className="max-w-md mt-1"
+                message={emailRequiredMessage}
+              />
+            </div>
+          }
+
+          {/* Phone */}
+          {contactMethod == CONTACT_METHOD_PHONE && 
+            <div className="mt-5 w-full max-w-xl">
+              <InputLabel htmlFor="phone" value={contactPage.contactForm.contactFormPhoneLabel} />
+              <TextInput
+                id="phone"
+                type="tel"
+                pattern="([0-9]{3}) [0-9]{3}-[0-9]{4}"
+                className="inline-block w-72"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                placeholder={contactPage.contactForm.contactFormPhonePlaceholder}
+              />
+              <InputError
+                className="max-w-md mt-1"
+                message={phoneRequiredMessage}
+              />
+            </div>
+          }
+
+          <PrimaryButton className="mt-8" type="submit" >
+            {contactPage.contactForm.contactFormSubmitButtonText}
+          </PrimaryButton>
+
+        </form>
+
+        {/* What happens next? */}
+        <div className="mt-10">
+          <h2 data-tina-field={tinaField(contactPage, "nextStepsHeading")} className="text-2xl font-['Latin_Modern_Roman']" id="contact-directly">{contactPage.nextStepsHeading}</h2>
+          <div data-tina-field={tinaField(contactPage, "nextStepsBody")} className="mt-4 prose">
+            <div className="text-sm">
+              <TinaMarkdown content={contactPage.nextStepsBody} />
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      {/* Direct contact data */}
+      <div className="mt-8">
+        <h2 data-tina-field={tinaField(contactPage, "contactDirectlyHeading")} className="text-3xl font-['Latin_Modern_Roman']" id="contact-directly">{contactPage.contactDirectlyHeading}</h2>
+        <div className="mt-4">
+          <div data-tina-field={tinaField(contactPage, "text")} className="prose">
+            <TinaMarkdown content={contactPage.contactDirectlyText} />
+          </div>
+          <ul className="mt-4 ml-5 list-disc prose">
+            <li data-tina-field={tinaField(contactPage, "phoneText")}>{contactPage.phoneText} <a className="hover:text-blue-600" href={`tel:${contactPage.phoneMachineReadable}`}>{contactPage.phone}</a> </li>
+            <li data-tina-field={tinaField(contactPage, "email")}>{contactPage.emailText} <a className="hover:text-blue-600" href={`mailto:${contactPage.email}`}>{contactPage.email}</a></li>
+          </ul>
+        </div>
+      </div>
 
     </PageWrapper>
   );

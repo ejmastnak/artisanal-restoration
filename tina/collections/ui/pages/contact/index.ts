@@ -8,7 +8,7 @@ export const ContactPageCollection: Collection = {
   format: "json",
 
   ui: {
-    // router: () => "/contact",
+    router: () => "/contact",
     allowedActions: {
       create: false,
       delete: false,
@@ -39,9 +39,101 @@ export const ContactPageCollection: Collection = {
       type: "string",
     },
     {
-      name: 'text',
-      label: 'Text',
+      name: 'intro',
+      label: 'Introductory text',
+      type: 'rich-text',
+    },
+    {
+      name: 'contactFormHeading',
+      label: 'Contact Form Heading',
       type: 'string',
+    },
+    {
+      name: 'contactForm',
+      label: 'Contact form fields',
+      type: 'object',
+      fields: [
+        {
+          name: 'contactFormNameLabel',
+          label: 'Name field label',
+          type: 'string',
+        },
+        {
+          name: 'contactFormNamePlaceholder',
+          label: 'Name field placeholder',
+          type: 'string',
+        },
+        {
+          name: 'contactFormMessageLabel',
+          label: 'Message field label',
+          type: 'string',
+        },
+        {
+          name: 'contactFormMessagePlaceholder',
+          label: 'Message field placeholder',
+          type: 'string',
+        },
+        {
+          name: 'contactFormContactMethodLabel',
+          label: 'Contact method field label',
+          type: 'string',
+        },
+        {
+          name: 'contactFormPhoneOptionLabel',
+          label: 'Phone option label',
+          type: 'string',
+        },
+        {
+          name: 'contactFormEmailOptionLabel',
+          label: 'Email option label',
+          type: 'string',
+        },
+        {
+          name: 'contactFormPhoneLabel',
+          label: 'Phone field label',
+          type: 'string',
+        },
+        {
+          name: 'contactFormPhonePlaceholder',
+          label: 'Phone field placeholder',
+          type: 'string',
+        },
+        {
+          name: 'contactFormEmailLabel',
+          label: 'Email field label',
+          type: 'string',
+        },
+        {
+          name: 'contactFormEmailPlaceholder',
+          label: 'Email field placeholder',
+          type: 'string',
+        },
+        {
+          name: 'contactFormSubmitButtonText',
+          label: 'Submit button text',
+          type: 'string',
+        },
+      ],
+    },
+    {
+      name: 'nextStepsHeading',
+      label: 'Next steps heading',
+      type: 'string',
+    },
+    {
+      name: 'nextStepsBody',
+      label: 'Next steps body',
+      type: 'rich-text',
+    },
+    {
+      name: 'contactDirectlyHeading',
+      label: 'Contact us directly heading',
+      type: 'string',
+    },
+    {
+      name: 'contactDirectlyText',
+      label: 'Contact us directly text',
+      type: 'rich-text',
     },
     {
       name: 'phoneText',
@@ -67,16 +159,6 @@ export const ContactPageCollection: Collection = {
       name: 'phoneMachineReadable',
       label: 'Machine-readable phone',
       type: 'string',
-    },
-    {
-      name: 'nextStepsText',
-      label: 'Next steps text',
-      type: 'string',
-    },
-    {
-      name: 'nextStepsBody',
-      label: 'Next steps body',
-      type: 'rich-text',
     },
   ],
 };
