@@ -1,5 +1,6 @@
 ---
 import client from "@tina/__generated__/client";
+import { getCollection } from 'astro:content';
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Portfolio from "@tina/pages/Portfolio/Index.tsx";
 import { optimizeTinaImages } from '@/lib/optimizeTinaImages';
@@ -9,6 +10,8 @@ const head = content.data.portfolioPage.head;
 
 // TODO: Optimize featured images of portfolio projects
 // For reference see `/home/ej/Documents/projects/web/juliaelyachar/www/src-tina/src/pages/index.astro`
+
+const projects = await getCollection('projects');
 ---
 
 <BaseLayout head={head}>

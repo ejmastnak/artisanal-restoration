@@ -1,6 +1,15 @@
 {
+  "head": {
+    "title": "Front porch stairs",
+    "description": ""
+  },
   "title": "Front porch stairs get a makeover",
   "summary": "Artisanal Restoration removed old decaying stairs, added a concrete foundation to prevent future decay from ground contact, and reframed the stringers and base plate with healthy wood.\n\nThe new structural framework was covered with beautiful mahogany treads, then topped off with a custom balustrade featuring beautiful finish carpentry details on the rail profile and newel post finials.\n",
   "featuredImage": "/src/assets/img/uploads/evelyn-stairs-fineal.jpg",
-  "featuredImageAlt": "A detail image of the finish carpentry on a fineal custom-built for a staircase in a Princeton, NJ home"
+  "featuredImageAlt": "A detail image of the finish carpentry on a fineal custom-built for a staircase in a Princeton, NJ home",
+  "overviewHeading": "About the project",
+  "overviewText": "Artisanal Restoration removed old decaying stairs, added a concrete foundation to prevent future decay from ground contact, and reframed the stringers and base plate with healthy wood.\n\nThe new structural framework was covered with beautiful mahogany treads, then topped off with a custom balustrade featuring beautiful finish carpentry details on the rail profile and newel post finials.\n",
+  "overviewImage": "/src/assets/img/uploads/evelyn-stairs-fineal.jpg",
+  "overviewImageAlt": "A detail image of the finish carpentry, showing a custom-build fineal  on a fineal custom-built for a staircase in a Princeton, NJ home",
+  "overviewImageCaption": "The completed stairs, showing a custom-build fineal with the freshly-stained staircase in the background"
 }

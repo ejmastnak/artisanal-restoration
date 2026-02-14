@@ -1,6 +1,42 @@
 {
+  "head": {
+    "title": "Flood restoration",
+    "description": ""
+  },
   "title": "Repairing flood damage in a historic home",
   "summary": "An upstairs bathroom fixture cracked with the homeowners travelling out of the country, leaving water flowing for days through the first floor ceiling.\n\nStarting from bare studs, Artisanal Restoration framed new walls and ceilings, supervised the installation of new electrical and plumbing fixtures, then repaired the entire damaged wing of the house, exactly matching the original hardwood floor, replicating custom 1920s moldings and trim, and reinstalling built-ins, while also uncovering and correcting structurally unsound basement framing and solving a perennially squeaky floor along the way.\n",
   "featuredImage": "/src/assets/img/uploads/evelyn-flood-restoration/complete.jpg",
-  "featuredImageAlt": "Hallway and kitchen of a 1910 home in Princeton, NJ, fully restored with custom trim after flood damage"
+  "featuredImageAlt": "Hallway and kitchen of a 1910 home in Princeton, NJ, fully restored with custom trim after flood damage",
+  "overviewHeading": "About the project",
+  "overviewText": "An upstairs bathroom fixture cracked with the homeowners travelling out of the country, leaving water flowing for days through the first floor ceiling.\n\nStarting from bare studs, Artisanal Restoration framed new walls and ceilings, supervised the installation of new electrical and plumbing fixtures, then repaired the entire damaged wing of the house, exactly matching the original hardwood floor, replicating custom 1920s moldings and trim, and reinstalling built-ins, while also uncovering and correcting structurally unsound basement framing and solving a perennially squeaky floor along the way.\n",
+  "overviewImage": "/src/assets/img/uploads/evelyn-flood-restoration/before.jpg",
+  "overviewImageAlt": "The first floor when starting the job.",
+  "overviewImageCaption": "The first floor when starting the job.",
+  "bodyHeading": "The restoration",
+  "bodySections": [
+    {
+      "text": "The restoration began by identifying and solving two structural issues: first, plumbing work in the 1950s left large notches cut into the first floor's main supporting beams, causing both the floor and the walls above it to sag; second, a conversion of the first-floor bathroom in the 1980s left the floor framed with small 2x4 members, which were insufficient to support the floor and causing considerable sagging and squeaking.\n\nArtisanal Restoration reinforced the 100-year-old basement framing with modern bolts and joist hangers, raised the sagging floor beam with steel posts placed in the basement, and replaced the weak 2x4 framing, with stronger 2x6 and 2x8 lumber. The result: a solid, reliable structural base on which to continue the rest of the renovation, and the sagging, squeaky first-floor fixed.\n",
+      "image": "/src/assets/img/uploads/evelyn-flood-restoration/framing-floor.jpg",
+      "imageAlt": "In the process of reframing the first-floor bathroom with stronger lumber.",
+      "imageCaption": "In the process of reframing the first-floor bathroom with stronger lumber."
+    },
+    {
+      "text": "The project continued by reframing the interior walls, ceilings, and door frames; running new electrical wiring and plumbing lines; removing the decaying 20th-century subfloor; adding insulation to the exterior walls wherever possible; and installing a new 3/4\" plywood subfloor and 1/2\" plywood underlayment—this solid floor surface would ensure the soon-to-be-installed hardwood floor would be squeak-proof.\n\nGreat care was taken during the framing process, using furring strips, custom on-site cuts of lumber, and nailing strips, to ensure the plane of the new interior walls and ceilings exactly blended into the existing walls and ceilings in the undamaged part of the house. This extra work ensured there would be no bumps, bellies, or gaps where newly installed drywall met the existing drywall in the undamaged parts of the house.\n",
+      "image": "/src/assets/img/uploads/evelyn-flood-restoration/subfloor.jpg",
+      "imageAlt": "The first floor reframed, with new subfloor installed.",
+      "imageCaption": "The first floor reframed, with new subfloor installed."
+    },
+    {
+      "text": "Drywall and hardwood finish flooring was installed by dedicated subcontractors, whom Artisanal Restoration has worked with for many years. Both installations went seamlessly thanks to the careful work on Artisanal Restoration's part in the framing stage to ensure that walls, ceilings, and subfloor were square, plumb, and planar. Both subcontractors mentioned not only how much easier this made their job, but that the extra care taken by Artisanal Restoration was crucial for good-quality installations on the subcontractors' parts.\n",
+      "image": "/src/assets/img/uploads/evelyn-flood-restoration/floor.jpg",
+      "imageAlt": "The first floor hallway coming together after installation of drywall and finish flooring.",
+      "imageCaption": "The first floor hallway coming together after installation of drywall and finish flooring."
+    },
+    {
+      "text": "Great care was taken during the final stages of the project to restore the elaborate 20th century trim and moldings along the doors, floors, ceilings, and windows. This stage came with a significant hurdle: during the initial demolition process (from before Artisanal Restoration was contacted for the project), all trim, headers, and moldings—custom-built for the house in the 20th century—were thrown out with the water-damaged drywall (one normally keeps custom wood trim on hand, since old wood trim can often be restored or at least used as a model for new pieces.)\n\nTaking this in stride, Artisanal Restoration reverse-engineered the existing trim profiles in the undamaged parts of the house, ordered cutter heads to custom-mill matching profiles for the new finish carpentry, and painstakingly hand-assembled and installed all door headers, plinth blocks, baseboards, and other trim. The result: a perfect match, faithful to the original work in this historic home.\n\nWith finish carpentry complete, dedicated painting subcontractors completed the job.\n",
+      "image": "/src/assets/img/uploads/evelyn-flood-restoration/complete.jpg",
+      "imageAlt": "Restored finish carpentry—note the detailed door headers, plinth blocks, and baseboards, all custom-milled and assembled by hand.",
+      "imageCaption": "Restored finish carpentry—note the detailed door headers, plinth blocks, and baseboards, all custom-milled and assembled by hand."
+    }
+  ]
 }

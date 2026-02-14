@@ -8,13 +8,11 @@ export const TestimonialCollection: Collection = {
   format: "json",
 
   ui: {
-    ui: {
-      // Use slugified reviewer name as testimonial filename
-      filename: {
-        readonly: true,
-        slugify: (values) => {
-          return values.testimonialReviewer.toLowerCase().replace(/ /g, '-').replace(/\./g, '')
-        },
+    // Use slugified reviewer name as testimonial filename
+    filename: {
+      readonly: true,
+      slugify: (values) => {
+        return values.testimonialReviewer.toLowerCase().replace(/ /g, '-').replace(/\./g, '')
       },
     },
   },

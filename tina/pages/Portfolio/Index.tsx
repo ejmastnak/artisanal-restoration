@@ -42,6 +42,11 @@ export default function PortfolioPage(props: Props) {
               <div className="prose">
                 <TinaMarkdown content={project.project.summary} />
               </div>
+              <div className="mt-5 w-fit block mx-auto">
+                <LinkButton href={`/portfolio/${project.project._sys.filename}`}>
+                  Read more
+                </LinkButton>
+              </div>
             </div>
           </div>
         ))}

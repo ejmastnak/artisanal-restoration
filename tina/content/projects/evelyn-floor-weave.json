@@ -1,6 +1,42 @@
 {
+  "head": {
+    "title": "Hardwood flooring restoration",
+    "description": ""
+  },
   "title": "Matching 70-year-old hardwood flooring to a fraction of an inch",
-  "summary": "Flood damage forced the homeowner to replace a section of a 1950s tongue-and-groove oak floor. Artisanal Restoration noticed an important detail: 70 years ago, floorboards were thicker and made with slightly larger tongues and grooves than the standard 3/4\" boards available today.\n\nTo ensure the new floorboards would exactly match the existing floor, Artisanal Restoration painstakingly resawed an additional 1/16\" from the grooves of the new boards, before expertly weaving them in to the existing floor—all of this after reframing the underlying joists and subfloor to solve a perennial squeaking problem. \n",
+  "summary": "Flood damage forced the homeowner to replace a section of a 1950s tongue-and-groove oak floor. Artisanal Restoration noticed an important detail: 70 years ago, floorboards were thicker and made with slightly larger tongues and grooves than the standard 3/4\" boards available today.\n\nTo ensure the new floorboards would exactly match the existing floor, Artisanal Restoration painstakingly resawed an additional 1/16\" from the grooves of the new boards, before expertly weaving them in to the existing floor—all of this after reframing the underlying joists and subfloor to solve a perennial squeaking problem.\n",
   "featuredImage": "/src/assets/img/uploads/evelyn-floor-weave/complete.jpg",
-  "featuredImageAlt": "New floorboards weaved seamlessly into an existing 70-year-old oak floor to repair flood damage"
+  "featuredImageAlt": "New floorboards weaved seamlessly into an existing 70-year-old oak floor to repair flood damage",
+  "overviewHeading": "About the project",
+  "overviewText": "Decades of wear and tear followed by flooding-induced water damage forced the homeowner to replace a section of a 1950s tongue-and-groove oak floor. The job was complicated by three issues:\n\n* The repaired section would have to seamlessly blend into the undamaged areas of the existing floor.\n* When the floor was installed 70 years ago, floorboards were made with thicker wood and slightly larger tongues and grooves than the standard 3/4\" boards available today—in other words, typical floorboards from current supplies aren't compatible with the original flooring.\n* The decades-old subfloor and underlying floor joists were decaying and poorly fastened, causing constant squeaks and sagging.\n\nArtisanal Restoration took these challenges in stride, producing a precise and minimally invasive repair.\n",
+  "overviewImage": "/src/assets/img/uploads/evelyn-floor-weave/before.jpg",
+  "overviewImageAlt": "The state of the floor after the most damaged boards were removed.",
+  "overviewImageCaption": "The state of the floor after the most damaged boards were removed.",
+  "bodyHeading": "The restoration",
+  "bodySections": [
+    {
+      "text": "Artisanal Restoration immediately recognized that it was impossible to perform a quality finish floor installation without first addressing the weak structural framework, so the job began with the subfloor and framing under the damaged floor.\n\nThe decaying subfloor boards and joists were removed; the floor reframed with healthy 2x8 lumber—more than sufficient to rigidly carry the floor's weight—and modern fasteners. The framing required custom cuts and awkward maneuvering to avoid the maze of copper heating pipes in the basement ceiling, but Artisanal Restoration was more than up to the task.\n",
+      "image": "/src/assets/img/uploads/evelyn-floor-weave/framing.jpg",
+      "imageAlt": "The area below the floor, newly reframed with healthy lumber.",
+      "imageCaption": "The area below the floor, newly reframed with healthy lumber to prevent future sagging and squeaking."
+    },
+    {
+      "text": "The repair continued by installing 3/4\" plywood subfloor—using plenty of fasteners, construction adhesive, and rosin paper to prevent future squeaking.\n\nThen came the technical part: to ensure the new floorboards exactly matched the existing floor, Artisanal Restoration painstakingly resawed an additional 1/16\" from the grooves of the new boards to accommodate the thicker tongues of the existing 1950s floorboards, before seamlessly weaving them in to the existing floor.\n",
+      "image": "/src/assets/img/uploads/evelyn-floor-weave/weave.jpg",
+      "imageAlt": "The weave of the new floorboards into the existing flooring almost complete.",
+      "imageCaption": "The weave of the new floorboards into the existing flooring almost complete—note the seamless fits and transition from new to old boards."
+    },
+    {
+      "text": "Under Artisanal Restoration's supervision, a dedicated flooring subcontractor sanded the existing finish flooring in the entire house—which was due for a restoration anyway—to blend the old and new floorboards together.\n\nThe job was completed by staining and finishing the sanded floor surface to protect and bring out the natural beauty of the oak's grain. After refinishing, the repaired section blended perfectly into the existing floorboards and was all but unrecognizable from the original floor (except for the welcome lack of sagging and squeaking!).\n",
+      "image": "/src/assets/img/uploads/evelyn-floor-weave/sanded.jpg",
+      "imageAlt": "The floor after sanding to blend the old and new surfaces. The repaired section is hardly recognizable as different from the original flooring.",
+      "imageCaption": "The floor after sanding to blend the old and new surfaces. The repaired section is now hardly recognizable as different from the original flooring."
+    },
+    {
+      "text": "While a typical flooring contractor would prefer to tear out the floor in the entire room to avoid dealing with the nuances of accommodating older flooring—and might avoid the underlying structural issues altogether—Artisanal Restoration had the willingness and technical ability to address only the small section of damaged floorboards.\n\nThe result: a fast, precise, and far less invasive solution than replacing the whole floor, which saved the homeowner both money and stress while preserving the original parts of the home where possible.\n",
+      "image": "/src/assets/img/uploads/evelyn-floor-weave/complete.jpg",
+      "imageAlt": "The floor after staining and finishing.",
+      "imageCaption": "The floor after staining and finishing; the image also features baseboards and plinth blocks, and door casing custom-built for the room by Artisanal Restoration."
+    }
+  ]
 }
