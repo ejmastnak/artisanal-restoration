@@ -87,11 +87,13 @@ export default function AboutPage(props: Props) {
 
         <div className="mt-5 grid grid-cols-1 md:grid-cols-3 gap-5 mx-auto">
           {aboutPage.portfolioFeaturedProjects.map((project, idx) => (
-            <img
-              src={project.project.featuredImage}
-              alt={project.project.featuredImageAlt}
-              className={`h-60 xxxs:h-72 md:h-60 w-full mx-auto max-w-md object-cover rounded-md ${idx > 0 ? 'hidden md:block' : ''}`} 
-            />
+            <a href={`/portfolio/${project.project._sys.filename}`} className="rounded-md overflow-clip hover:outline hover:outline-2 hover:outline-orange-900 hover:shadow-lg">
+              <img
+                src={project.project.featuredImage}
+                alt={project.project.featuredImageAlt}
+                className={`h-60 xxxs:h-72 md:h-60 w-full mx-auto max-w-md object-cover ${idx > 0 ? 'hidden md:block' : ''}`} 
+              />
+            </a>
           ))}
         </div>
 
