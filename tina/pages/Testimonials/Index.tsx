@@ -30,7 +30,7 @@ export default function TestimonialsPage(props: Props) {
     <PageWrapper>
       <h1 className="text-5xl font-['Latin_Modern_Roman']">{testimonialsPage.h1}</h1>
 
-      <div className="prose mt-10 max-w-3xl">
+      <div className="myprose mt-10 max-w-3xl">
         <TinaMarkdown content={testimonialsPage.description} components={mdLinkComponents} />
       </div>
 
@@ -38,7 +38,7 @@ export default function TestimonialsPage(props: Props) {
         {props.testimonials.map((testimonial, idx) => (
           <li>
             <Testimonial client={testimonial.client} reverse={idx % 2 == 0 ? false : true}>
-              <div className="prose">
+              <div className="myprose">
                 <TinaMarkdown content={testimonial.testimonial} />
               </div>
             </Testimonial>
@@ -46,7 +46,7 @@ export default function TestimonialsPage(props: Props) {
         ))}
       </ul>
 
-      <div className="prose mt-8 max-w-3xl">
+      <div className="myprose mt-8 max-w-3xl">
         <TinaMarkdown content={testimonialsPage.closingText} components={mdLinkComponents} />
       </div>
 

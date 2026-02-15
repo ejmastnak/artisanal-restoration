@@ -23,7 +23,7 @@ export default function PortfolioPage(props: Props) {
 
       <h1 className="text-5xl font-['Latin_Modern_Roman']">Portfolio</h1>
 
-      <div className="prose mt-10 max-w-xl mb-12 pb-12 border-b border-gray-300 ">
+      <div className="myprose mt-10 max-w-xl mb-12 pb-12 border-b border-gray-300 ">
         <TinaMarkdown content={portfolioPage.summary} />
       </div>
 
@@ -39,7 +39,7 @@ export default function PortfolioPage(props: Props) {
               <p className="text-center mb-5 text-3xl font-['Latin_Modern_Roman']">
                 {project.project.title}
               </p>
-              <div className="prose">
+              <div className="myprose">
                 <TinaMarkdown content={project.project.summary} />
               </div>
               <div className="mt-5 w-fit block mx-auto">

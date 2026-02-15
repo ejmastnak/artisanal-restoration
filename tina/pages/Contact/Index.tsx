@@ -69,7 +69,7 @@ export default function ContactPage(props: Props) {
       <h1 data-tina-field={tinaField(contactPage, "h1")} className="text-5xl font-['Latin_Modern_Roman']">{contactPage.h1}</h1>
 
       {/* Intro message */}
-      <div data-tina-field={tinaField(contactPage, "intro")} className="mt-8 prose text-gray-700 max-w-2xl">
+      <div data-tina-field={tinaField(contactPage, "intro")} className="mt-8 myprose text-gray-700 max-w-2xl">
         <TinaMarkdown content={contactPage.intro} components={mdLinkComponents}/>
       </div>
 
@@ -179,7 +179,7 @@ export default function ContactPage(props: Props) {
         {/* What happens next? */}
         <div className="mt-10">
           <h2 data-tina-field={tinaField(contactPage, "nextStepsHeading")} className="text-2xl font-['Latin_Modern_Roman']" id="contact-directly">{contactPage.nextStepsHeading}</h2>
-          <div data-tina-field={tinaField(contactPage, "nextStepsBody")} className="mt-4 prose">
+          <div data-tina-field={tinaField(contactPage, "nextStepsBody")} className="mt-4 myprose">
             <div className="text-sm">
               <TinaMarkdown content={contactPage.nextStepsBody} />
             </div>
@@ -192,10 +192,10 @@ export default function ContactPage(props: Props) {
       <div className="mt-8">
         <h2 data-tina-field={tinaField(contactPage, "contactDirectlyHeading")} className="text-3xl font-['Latin_Modern_Roman']" id="contact-directly">{contactPage.contactDirectlyHeading}</h2>
         <div className="mt-4">
-          <div data-tina-field={tinaField(contactPage, "text")} className="prose">
+          <div data-tina-field={tinaField(contactPage, "text")} className="myprose">
             <TinaMarkdown content={contactPage.contactDirectlyText} />
           </div>
-          <ul className="mt-4 ml-5 list-disc prose">
+          <ul className="mt-4 ml-5 list-disc myprose">
             <li data-tina-field={tinaField(contactPage, "phoneText")}>{contactPage.phoneText} <a className="hover:text-blue-600" href={`tel:${contactPage.phoneMachineReadable}`}>{contactPage.phone}</a> </li>
             <li data-tina-field={tinaField(contactPage, "email")}>{contactPage.emailText} <a className="hover:text-blue-600" href={`mailto:${contactPage.email}`}>{contactPage.email}</a></li>
           </ul>

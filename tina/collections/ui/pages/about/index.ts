@@ -99,5 +99,50 @@ export const AboutPageCollection: Collection = {
         },
       ],
     },
+    {
+      name: 'portfolioHeading',
+      label: 'Portfolio heading',
+      type: 'string',
+    },
+    {
+      name: 'portfolioText',
+      label: 'Portfolio text',
+      type: 'rich-text',
+    },
+    {
+      name: 'portfolioFeaturedProjects',
+      label: 'Featured projects',
+      description: 'Pick three projects—the layout is designed with three columns to feature three projects.',
+      type: 'object',
+      list: true,
+      ui: {
+        itemProps: (item) => {
+          return { label: item.project };
+        },
+      },
+      fields: [
+        {
+          name: 'project',
+          label: 'Project',
+          type: 'reference',
+          collections: ['project'],
+          ui: {
+            optionComponent: (
+              props: {
+                title: string,
+              },
+              _internalSys: { path: string }
+            ) => {
+              return props.title;
+            }
+          }
+        }
+      ],
+    },
+    {
+      name: 'portfolioButtonText',
+      label: 'Portfolio button text',
+      type: 'string',
+    },
   ],
 };

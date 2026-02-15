@@ -31,7 +31,7 @@ export default function ServicesPage(props: Props) {
 
       <div className="mt-16 md:mt-20 md:flex md:flex-row-reverse md:gap-x-16">
         <div className="mt-5 max-w-xl">
-          <div className="prose">
+          <div className="myprose">
             <TinaMarkdown content={servicesPage.summary} />
           </div>
           <LinkButton classes="mt-5" href="/contact">{servicesPage.contactButtonText}</LinkButton>
@@ -57,7 +57,7 @@ export default function ServicesPage(props: Props) {
                 <p className="text-center mb-5 text-3xl font-['Latin_Modern_Roman']">
                   {service.serviceHeading}
                 </p>
-                <div className="max-w-xl prose">
+                <div className="max-w-xl myprose">
                   <TinaMarkdown content={service.serviceDescription} />
                 </div>
               </div>
@@ -69,7 +69,7 @@ export default function ServicesPage(props: Props) {
       {/* Working with Artisanal Restoration */}
       <div className="mt-20">
         <h2 className="text-4xl font-['Latin_Modern_Roman']">{servicesPage.workingWithUsHeading}</h2>
-        <div className="mt-5 prose">
+        <div className="mt-5 myprose">
           <TinaMarkdown content={servicesPage.workingWithUsBody} components={mdLinkComponents} />
         </div>
       </div>

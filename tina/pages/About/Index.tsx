@@ -64,6 +64,7 @@ export default function AboutPage(props: Props) {
         </div>
       </div>
 
+      {/* Area served */}
       <div className="mt-8 max-w-2xl">
         <h2 className="text-4xl font-['Latin_Modern_Roman']">{aboutPage.areaServedHeading}</h2>
         <div className="mt-4 myprose">
@@ -71,10 +72,37 @@ export default function AboutPage(props: Props) {
         </div>
         <ul className="mt-5 ml-5 grid grid-cols-1 xxs:grid-cols-2 list-disc">
           {aboutPage.areasServed.map((area) => (
-          <li>{area.area}</li>
+            <li>{area.area}</li>
           ))}
         </ul>
       </div>
+
+      {/* Portfolio */}
+      <div className="mt-12 pt-12 border-t border-gray-200 max-w-4xl">
+        <h2 className="text-4xl font-['Latin_Modern_Roman'] text-center">{aboutPage.portfolioHeading}</h2>
+
+        <div className="mt-5 myprose max-w-xl mx-auto text-center">
+          <TinaMarkdown content={aboutPage.portfolioText} components={mdLinkComponents} />
+        </div>
+
+        <div className="mt-5 grid grid-cols-1 md:grid-cols-3 gap-5 mx-auto">
+          {aboutPage.portfolioFeaturedProjects.map((project, idx) => (
+            <img
+              src={project.project.featuredImage}
+              alt={project.project.featuredImageAlt}
+              className={`h-60 xxxs:h-72 md:h-60 w-full mx-auto max-w-md object-cover rounded-md ${idx > 0 ? 'hidden md:block' : ''}`} 
+            />
+          ))}
+        </div>
+
+        <div className="w-fit mx-auto">
+          <LinkButton classes="mt-10" href="/portfolio">
+            {aboutPage.portfolioButtonText}
+          </LinkButton>
+        </div>
+
+      </div>
+
     </PageWrapper>
   );
 }

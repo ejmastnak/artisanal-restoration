@@ -37,5 +37,32 @@ fragment MyAboutPageParts on AboutPage {
     __typename
     area
   }
+  portfolioHeading
+  portfolioText
+  portfolioFeaturedProjects {
+    __typename
+    project {
+      ... on Project {
+        __typename
+        title
+        summary
+        featuredImage
+        featuredImageAlt
+      }
+      ... on Document {
+        _sys {
+          filename
+          basename
+          hasReferences
+          breadcrumbs
+          path
+          relativePath
+          extension
+        }
+        id
+      }
+    }
+  }
+  portfolioButtonText
 
 }

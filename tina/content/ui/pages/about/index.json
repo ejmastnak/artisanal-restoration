@@ -16,5 +16,19 @@
     {
       "area": "Nashville, TN"
     }
-  ]
+  ],
+  "portfolioHeading": "Our work",
+  "portfolioText": "You can visit [our Portfolio page](/portfolio) for a selection of projects representative of work you can expect from Artisanal Restoration.\n",
+  "portfolioFeaturedProjects": [
+    {
+      "project": "tina/content/projects/evelyn-flood-restoration.json"
+    },
+    {
+      "project": "tina/content/projects/deck-restoration.json"
+    },
+    {
+      "project": "tina/content/projects/evelyn-front-stairs.json"
+    }
+  ],
+  "portfolioButtonText": "Our portfolio page"
 }

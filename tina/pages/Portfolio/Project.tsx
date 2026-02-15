@@ -34,7 +34,7 @@ export default function Project(props: Props) {
         </div>
         <div className="mt-5 md:mt-2 text-gray-800">
           <h2 className="text-3xl font-['Latin_Modern_Roman']">{project.overviewHeading}</h2>
-          <div className="mt-4 prose">
+          <div className="mt-4 myprose">
             <TinaMarkdown content={project.overviewText} />
           </div>
         </div>
@@ -53,7 +53,7 @@ export default function Project(props: Props) {
             <p className="mt-1 text-sm text-gray-700 text-center mx-auto">{section.imageCaption}</p>
           </div>
           <div className="mt-5 md:mt-2 text-gray-800">
-            <div className="prose">
+            <div className="myprose">
               <TinaMarkdown content={section.text} />
             </div>
           </div>
