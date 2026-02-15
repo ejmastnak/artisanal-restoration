@@ -21,9 +21,6 @@ export default function Services({ homePage, }: Props) {
           <div className="prose max-w-md">
             <TinaMarkdown content={homePage.servicesSummary} />
           </div>
-          <div className="mt-3 myprose max-w-md">
-            <TinaMarkdown content={homePage.servicesAdditionalText} />
-          </div>
           <LinkButton tinaField={tinaField(homePage, "servicesLinkText")} classes="mt-5" href="/services">
             {homePage.servicesLinkText}
           </LinkButton>

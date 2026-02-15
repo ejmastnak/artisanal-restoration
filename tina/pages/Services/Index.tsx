@@ -30,9 +30,11 @@ export default function ServicesPage(props: Props) {
       <h1 className="text-5xl font-['Latin_Modern_Roman']">{servicesPage.h1}</h1>
 
       <div className="mt-16 md:mt-20 md:flex md:flex-row-reverse md:gap-x-16">
-        <div className="mt-5 prose max-w-xl">
-          <TinaMarkdown content={servicesPage.summary} />
-          <LinkButton href="/contact">{servicesPage.contactButtonText}</LinkButton>
+        <div className="mt-5 max-w-xl">
+          <div className="prose">
+            <TinaMarkdown content={servicesPage.summary} />
+          </div>
+          <LinkButton classes="mt-5" href="/contact">{servicesPage.contactButtonText}</LinkButton>
         </div>
         <img 
           src={servicesPage.servicesImage}

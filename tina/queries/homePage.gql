@@ -41,7 +41,6 @@ fragment MyHomePageParts on HomePage {
   servicesImage
   servicesImageAlt
   servicesSummary
-  servicesAdditionalText
   servicesLinkText
 
   testimonialsHeading

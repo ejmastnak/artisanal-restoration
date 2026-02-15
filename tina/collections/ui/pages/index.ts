@@ -110,11 +110,6 @@ export const HomePageCollection: Collection = {
       type: 'rich-text',
     },
     {
-      name: 'servicesAdditionalText',
-      label: 'Additional services text',
-      type: 'rich-text',
-    },
-    {
       name: 'servicesImage',
       label: 'Services image',
       type: 'image',
