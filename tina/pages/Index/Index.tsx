@@ -24,7 +24,7 @@ export default function HomePage(props: Props) {
   return (
     <div>
       <Hero homePage={homePage} />
-      <Wrapper classes="mt-4 md:mt-6 lg:mt-8">
+      <Wrapper className="mt-4 md:mt-6 lg:mt-8">
         <div className="pt-10 md:py-16">
           <About homePage={homePage} />
         </div>

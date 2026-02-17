@@ -5,9 +5,9 @@ import XMarkIcon from 'astro-heroicons/outline/XMark.astro';
 import client from "@tina/__generated__/client";
 
 interface Props {
-  classes: string
+  className: string
 }
-const { classes } = Astro.props as Props;
+const { className } = Astro.props as Props;
 
 const content = await client.queries.myNav({ relativePath: "index.json" });
 const nav = content.data.nav;
@@ -31,7 +31,7 @@ const observer = new MutationObserver(mutations => {
 observer.observe(menu, { attributes: true });
 </script>
 
-<nav class={`sticky relative top-0 bg-white border-b z-20 py-5 px-6 ${classes ? classes : ''}`} >
+<nav class={`sticky relative top-0 bg-white border-b z-20 py-5 px-6 ${className ?? ""}`} >
 
   <div class="max-w-5xl mx-auto">
 

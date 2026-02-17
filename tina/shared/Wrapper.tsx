@@ -1,13 +1,13 @@
 import type { ReactNode } from "react";
 
 interface Props {
-  classes: string;
+  className: string;
   children: ReactNode;
 }
 
-export default function Wrapper({ classes, children }: Props) {
+export default function Wrapper({ className, children }: Props) {
   return (
-    <div className={`max-w-6xl mx-auto px-6 md:px-10 ${classes ? classes : ''}`} >
+    <div className={`max-w-6xl mx-auto px-6 md:px-10 ${className ?? ""}`} >
       {children}
     </div>
   );

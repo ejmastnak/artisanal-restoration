@@ -28,7 +28,7 @@ export default function Hero({ homePage }: Props) {
           <div data-tina-field={tinaField(homePage, "heroDescription")} className="mt-5 myprosedark myprose-condensed">
             <TinaMarkdown content={homePage.heroDescription} />
           </div>
-          <LinkButton tinaField={tinaField(homePage, "heroButtonText")} classes="mt-5" href="/about">
+          <LinkButton tinaField={tinaField(homePage, "heroButtonText")} className="mt-5" href="/about">
             {homePage.heroButtonText}
           </LinkButton>
         </div>

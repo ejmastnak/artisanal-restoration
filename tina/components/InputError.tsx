@@ -1,19 +1,13 @@
-type InputErrorProps = {
-  message?: string
-  className?: string
+type Props = {
+  message?: string;
+  className?: string;
 }
 
-export default function InputError({
-  message,
-  className = "",
-}: InputErrorProps) {
+export default function InputError({ message, className, }: Props) {
   if (!message) return null
-
   return (
-    <div className={className}>
-      <p className="text-sm text-red-600">
-        {message}
-      </p>
-    </div>
-  )
+    <p className={`text-sm text-red-600 ${className ?? ""}`}>
+      {message}
+    </p>
+  );
 }

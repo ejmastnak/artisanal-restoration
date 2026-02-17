@@ -34,7 +34,7 @@ export default function ServicesPage(props: Props) {
           <div className="myprose">
             <TinaMarkdown content={servicesPage.summary} />
           </div>
-          <LinkButton classes="mt-5" href="/contact">{servicesPage.contactButtonText}</LinkButton>
+          <LinkButton className="mt-5" href="/contact">{servicesPage.contactButtonText}</LinkButton>
         </div>
         <img 
           src={servicesPage.servicesImage}

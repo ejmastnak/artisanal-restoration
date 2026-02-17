@@ -27,7 +27,7 @@ export default function Testimonials({ homePage, }: Props) {
         ))}
       </ul>
 
-      <LinkButton tinaField={tinaField(homePage, "testimonialsLinkText")} classes="mt-5" href="/testimonials">
+      <LinkButton tinaField={tinaField(homePage, "testimonialsLinkText")} className="mt-5" href="/testimonials">
         {homePage.testimonialsLinkText}
       </LinkButton>
 

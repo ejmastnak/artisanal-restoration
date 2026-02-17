@@ -57,7 +57,7 @@ export default function AboutPage(props: Props) {
             <div className="myprose">
               <TinaMarkdown content={aboutPage.servicesDescription} components={mdLinkComponents} />
             </div>
-            <LinkButton classes="mt-5" href="/services">
+            <LinkButton className="mt-5" href="/services">
               {aboutPage.servicesLinkButtonText}
             </LinkButton>
           </div>
@@ -98,7 +98,7 @@ export default function AboutPage(props: Props) {
         </div>
 
         <div className="w-fit mx-auto">
-          <LinkButton classes="mt-10" href="/portfolio">
+          <LinkButton className="mt-10" href="/portfolio">
             {aboutPage.portfolioButtonText}
           </LinkButton>
         </div>

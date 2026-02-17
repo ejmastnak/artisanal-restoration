@@ -1,4 +1,5 @@
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import type { ReactNode } from 'react';
 
 type Props = {
   client: string,
