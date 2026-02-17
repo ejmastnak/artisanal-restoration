@@ -8,6 +8,7 @@
     "build": "tinacms build && astro build",
     "preview": "astro preview",
     "typecheck": "tsc --noEmit",
+    "typecheck-diagnostic": "tsc --noEmit --pretty false --extendedDiagnostics --noErrorTruncation",
     "astro": "astro",
     "postinstall": "patch-package",
     "postbuild": "node scripts/remove-login-llama.js"

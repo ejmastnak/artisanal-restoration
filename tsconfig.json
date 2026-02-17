@@ -1,8 +1,9 @@
 {
   "extends": "astro/tsconfigs/strict",
-  "include": [".astro/types.d.ts", "**/*"],
+  "include": [".astro/types.d.ts", "src", "tina"],
   "exclude": ["dist"],
   "compilerOptions": {
+    "skipLibCheck": true,
     "strictNullChecks": true,
     "paths": {
       "@tina/*": ["./tina/*"],
