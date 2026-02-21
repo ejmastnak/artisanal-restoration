@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import client from "@tina/__generated__/client";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Project from "@tina/pages/Portfolio/Project.tsx";
+import { optimizeTinaImages } from '@/lib/optimizeTinaImages';
 
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
@@ -22,6 +23,24 @@ export async function getStaticPaths() {
 const { project, getTinaProps } = Astro.props;
 const content = await getTinaProps();
 const head = content.data.project.head;
+
+await optimizeTinaImages(content, [
+  {
+    srcPath: ['data', 'project', 'overviewImage'],
+    altPath: ['data', 'project', 'overviewImageAlt'],
+    width: 800,
+  },
+]);
+
+const imagesToOptimize = content.data.project.bodySections.map((project, idx) => {
+  return {
+    srcPath: ['data', 'project', 'bodySections', `${idx}`, 'image'],
+    altPath: ['data', 'project', 'bodySections', `${idx}`, 'imageAlt'],
+    width: 800,
+    idx: idx,
+  }
+});
+await optimizeTinaImages(content, imagesToOptimize);
 ---
 
 <BaseLayout head={head}>
