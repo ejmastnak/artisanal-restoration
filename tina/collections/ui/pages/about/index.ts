@@ -54,11 +54,6 @@ export const AboutPageCollection: Collection = {
       type: 'rich-text',
     },
     {
-      name: 'servicesLinkButtonText',
-      label: 'Services link button text',
-      type: 'string',
-    },
-    {
       name: 'servicesImage',
       label: 'Services image',
       type: 'image',
@@ -66,6 +61,11 @@ export const AboutPageCollection: Collection = {
     {
       name: 'servicesImageAlt',
       label: 'Services image alt text',
+      type: 'string',
+    },
+    {
+      name: 'servicesLinkButtonText',
+      label: 'Services link button text',
       type: 'string',
     },
     {

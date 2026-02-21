@@ -18,7 +18,7 @@ export default function About({ homePage }: Props) {
           className="h-56 w-60 mx-auto md:w-96 md:h-96 object-cover rounded-md"
         />
         <div className="md:px-8">
-          <div className="myprose max-w-md">
+          <div className="prose max-w-md">
             <TinaMarkdown content={homePage.aboutDescription} />
           </div>
           <LinkButton tinaField={tinaField(homePage, "aboutLinkText")} className="mt-5" href="/about">

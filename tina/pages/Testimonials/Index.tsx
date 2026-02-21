@@ -22,15 +22,15 @@ export default function TestimonialsPage(props: Props) {
 
   const mdLinkComponents = {
     a: (props) => (
-      <a href={props.url} className="text-blue-500 font-medium hover:underline hover:text-blue-600 hover:cursor-pointer">{props.children}</a>
+      <a href={props.url} className="text-blue-500 font-medium hover:underline no-underline hover:text-blue-600 hover:cursor-pointer">{props.children}</a>
     ),
   };
 
   return (
     <PageWrapper>
-      <h1 className="text-5xl font-['Latin_Modern_Roman']">{testimonialsPage.h1}</h1>
+      <h1 data-tina-field={tinaField(testimonialsPage, "h1")} className="text-5xl font-['Latin_Modern_Roman']">{testimonialsPage.h1}</h1>
 
-      <div className="myprose mt-10 max-w-3xl">
+      <div data-tina-field={tinaField(testimonialsPage, "description")} className="prose mt-10 max-w-3xl">
         <TinaMarkdown content={testimonialsPage.description} components={mdLinkComponents} />
       </div>
 
@@ -38,7 +38,7 @@ export default function TestimonialsPage(props: Props) {
         {props.testimonials.map((testimonial, idx) => (
           <li>
             <TestimonialComponent client={testimonial.client} reverse={idx % 2 == 0 ? false : true}>
-              <div className="myprose">
+              <div className="prose">
                 <TinaMarkdown content={testimonial.testimonial} />
               </div>
             </TestimonialComponent>
@@ -46,7 +46,7 @@ export default function TestimonialsPage(props: Props) {
         ))}
       </ul>
 
-      <div className="myprose mt-8 max-w-3xl">
+      <div data-tina-field={tinaField(testimonialsPage, "closingText")} className="prose mt-8 max-w-3xl">
         <TinaMarkdown content={testimonialsPage.closingText} components={mdLinkComponents} />
       </div>
 

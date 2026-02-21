@@ -21,15 +21,15 @@ export default function PortfolioPage(props: Props) {
   return (
     <PageWrapper>
 
-      <h1 className="text-5xl font-['Latin_Modern_Roman']">Portfolio</h1>
+      <h1 data-tina-field={tinaField(portfolioPage, "heading")} className="text-5xl font-['Latin_Modern_Roman']">{portfolioPage.h1}</h1>
 
-      <div className="myprose mt-10 max-w-xl mb-12 pb-12 border-b border-gray-300 ">
+      <div data-tina-field={tinaField(portfolioPage, "summary")} className="prose mt-10 max-w-xl mb-12 pb-12 border-b border-gray-300 ">
         <TinaMarkdown content={portfolioPage.summary} />
       </div>
 
       <div className="flex flex-col gap-y-32">
         {portfolioPage.featuredProjects.map((project, idx) => (
-          <div className={`md:flex gap-x-8 ${idx %2 == 0 ? 'md:flex-row-reverse' : ''}`}>
+          <div data-tina-field={tinaField(project, "project")} className={`md:flex gap-x-8 ${idx %2 == 0 ? 'md:flex-row-reverse' : ''}`}>
             <img
               src={project.project.featuredImage}
               alt={project.project.featuredImageAlt}
@@ -39,7 +39,7 @@ export default function PortfolioPage(props: Props) {
               <p className="text-center mb-5 text-3xl font-['Latin_Modern_Roman']">
                 {project.project.title}
               </p>
-              <div className="myprose">
+              <div className="prose">
                 <TinaMarkdown content={project.project.summary} />
               </div>
               <div className="mt-5 w-fit block mx-auto">
