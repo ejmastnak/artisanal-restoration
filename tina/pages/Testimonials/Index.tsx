@@ -36,7 +36,7 @@ export default function TestimonialsPage(props: Props) {
 
       <ul className="mt-12 ml-5 space-y-8">
         {props.testimonials.map((testimonial, idx) => (
-          <li>
+          <li key={testimonial.client}>
             <TestimonialComponent client={testimonial.client} reverse={idx % 2 == 0 ? false : true}>
               <div className="prose">
                 <TinaMarkdown content={testimonial.testimonial} />

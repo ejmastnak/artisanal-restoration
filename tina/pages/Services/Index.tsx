@@ -48,7 +48,7 @@ export default function ServicesPage(props: Props) {
         <h2 data-tina-field={tinaField(servicesPage, "servicesListHeading")} className="text-4xl text-center  font-['Latin_Modern_Roman']">{servicesPage.servicesListHeading}</h2>
         <div className="mt-12">
           {servicesPage.servicesList.map((service, idx) => (
-            <div className={`my-12 md:flex gap-x-8 ${idx %2 == 0 ? 'md:flex-row-reverse' : ''}`}>
+            <div key={service.serviceHeading} className={`my-12 md:flex gap-x-8 ${idx %2 == 0 ? 'md:flex-row-reverse' : ''}`}>
               <img
                 data-tina-field={tinaField(service, "serviceImage")}
                 src={service.serviceImage}

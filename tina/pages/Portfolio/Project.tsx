@@ -44,7 +44,7 @@ export default function Project(props: Props) {
       <h2 data-tina-field={tinaField(project, "bodyHeading")} className="mt-10 text-4xl font-['Latin_Modern_Roman'] text-center">{project.bodyHeading}</h2>
 
       {project.bodySections?.map((section, idx) => (
-        <div className={`my-10 md:flex gap-x-8 ${idx % 2 == 0 ? 'md:flex-row-reverse' : ''}`}>
+        <div key={section.image} className={`my-10 md:flex gap-x-8 ${idx % 2 == 0 ? 'md:flex-row-reverse' : ''}`}>
           <div>
             <img
               data-tina-field={tinaField(section, "image")}

@@ -29,16 +29,16 @@ export default function PortfolioPage(props: Props) {
 
       <div className="flex flex-col gap-y-32">
         {portfolioPage.featuredProjects.map((project, idx) => (
-          <div data-tina-field={tinaField(project, "project")} className={`md:flex gap-x-8 ${idx %2 == 0 ? 'md:flex-row-reverse' : ''}`}>
-            <img
-              src={project.project.featuredImage}
-              alt={project.project.featuredImageAlt}
-              className="shrink-0 w-full h-56 mx-auto md:w-80 md:h-80 lg:w-96 lg:h-96 object-cover rounded-md"
-            />
+          <div key={project.project.id} data-tina-field={tinaField(project, "project")} className={`md:flex gap-x-8 ${idx %2 == 0 ? 'md:flex-row-reverse' : ''}`}>
+            <a href={`/portfolio/${project.project._sys.filename}`} className="hover:shadow-md hover:outline hover:outline-1 hover:outline-gray-300 w-fit h-fit rounded-md overflow-clip">
+              <img
+                src={project.project.featuredImage}
+                alt={project.project.featuredImageAlt}
+                className="shrink-0 w-full h-56 mx-auto md:w-80 md:h-80 lg:w-96 lg:h-96 object-cover"
+              />
+            </a>
             <div className="mt-8 text-gray-800 max-w-xl">
-              <p className="text-center mb-5 text-3xl font-['Latin_Modern_Roman']">
-                {project.project.title}
-              </p>
+              <h2 className="text-center mb-5 text-3xl font-['Latin_Modern_Roman']"><a href={`/portfolio/${project.project._sys.filename}`} className="hover:underline">{project.project.title}</a></h2>
               <div className="prose">
                 <TinaMarkdown content={project.project.summary} />
               </div>
