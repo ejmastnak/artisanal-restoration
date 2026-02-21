@@ -22,12 +22,11 @@ export default {
         'prose': '1.8',
       },
       colors: {
-        sc: {
-          orange: '#f7941d',
-          white: '#fef3e6',
-          pink: '#fea7c6',
-          brown: '#2d2821',
-          dark: '#26231e'
+        theme: {
+          brown: '#4B3621',
+          tan: '#b28d71',
+          tandark: '#a67b5b',
+          light: '#f8f4f2',
         },
       },
       fontFamily: {

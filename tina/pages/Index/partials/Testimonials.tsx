@@ -13,7 +13,7 @@ export default function Testimonials({ homePage, }: Props) {
     <div>
       <h2 className="text-center text-5xl font-['Latin_Modern_Roman']">{homePage.testimonialsHeading}</h2>
 
-      <p className="mt-10">{homePage.testimonialsDescription}</p>
+      <p className="mt-10 prose">{homePage.testimonialsDescription}</p>
 
       <ul className="mt-10 ml-5 space-y-8">
         {homePage.featuredTestimonials.map((testimonial, idx) => (
@@ -27,9 +27,11 @@ export default function Testimonials({ homePage, }: Props) {
         ))}
       </ul>
 
-      <LinkButton tinaField={tinaField(homePage, "testimonialsLinkText")} className="mt-5" href="/testimonials">
-        {homePage.testimonialsLinkText}
-      </LinkButton>
+      <div className="mt-8 mx-auto w-fit">
+        <LinkButton tinaField={tinaField(homePage, "testimonialsLinkText")} href="/testimonials">
+          {homePage.testimonialsLinkText}
+        </LinkButton>
+      </div>
 
     </div>   
   );

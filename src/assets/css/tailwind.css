@@ -2,27 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-
-@layer components {
-
-  .myprose {
-    @apply text-gray-700 leading-prose max-w-2xl;
+@layer utilities {
+  .clip-wave-bottom {
+    clip-path: url(#clipWaveBottom);
   }
-
-  .myprosedark {
-    @apply text-sc-white leading-prose max-w-2xl;
+  .clip-wave-bottom-condensed {
+    clip-path: url(#clipWaveBottomCondensed);
   }
-
-  .myprose p + p, .myprosedark p + p {
-    @apply mt-5;
+  .clip-wave-top {
+    clip-path: url(#clipWaveTop);
   }
-
-  .myprose-condensed p + p {
-    @apply mt-2;
+  .clip-wave-top-condensed {
+    clip-path: url(#clipWaveTopCondensed);
   }
-
-  .myprose-loose p + p {
-    @apply mt-8;
-  }
-
 }

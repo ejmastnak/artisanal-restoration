@@ -25,10 +25,10 @@ export default function HomePage(props: Props) {
     <div>
       <Hero homePage={homePage} />
       <Wrapper className="mt-4 md:mt-6 lg:mt-8">
-        <div className="pt-10 md:py-16">
+        <div className="pt-10 py-16">
           <About homePage={homePage} />
         </div>
-        <div className="pt-10 md:py-16 border-t border-gray-200">
+        <div className="pt-10 py-16 border-t border-gray-200">
           <Services homePage={homePage} />
         </div>
         <div className="pb-16 mb-12 md:pb-24 md:mb-20 pt-10 md:py-16 border-t border-gray-200">
