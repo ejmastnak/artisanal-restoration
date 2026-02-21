@@ -85,23 +85,23 @@ export const ServicesPageCollection: Collection = {
       },
       fields: [
         {
-          name: 'serviceHeading',
-          label: 'Service heading',
+          name: 'name',
+          label: 'Name of service',
           type: 'string',
         },
         {
-          name: 'serviceDescription',
-          label: 'Service description',
+          name: 'description',
+          label: 'Description of service',
           type: 'rich-text',
         },
         {
-          name: 'serviceImage',
-          label: 'Service image',
+          name: 'image',
+          label: 'Image',
           type: 'image',
         },
         {
-          name: 'serviceImageAlt',
-          label: 'Service image alt text',
+          name: 'imageAlt',
+          label: 'Image alt text',
           type: 'string',
         }
       ],

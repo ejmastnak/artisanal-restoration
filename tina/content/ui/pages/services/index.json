@@ -12,34 +12,34 @@
   "servicesListHeading": "Featured services",
   "servicesList": [
     {
-      "serviceHeading": "Restoration and renovation of historic homes",
-      "serviceDescription": "Artisanal Restoration specializes in the service and restoration of historic homes, handling everything from routine maintenance to full-scale renovations. We recognize and adapt to each home's quirks and history on a case-by-case basis, and our work will always be faithful to the time period and unique character of your home.\n",
-      "serviceImage": "/src/assets/img/uploads/evelyn-street-view.jpg",
-      "serviceImageAlt": "A 1910 home in Princeton, NJ served by Artisanal Restoration"
+      "name": "Restoration and renovation of historic homes",
+      "description": "Artisanal Restoration specializes in the service and restoration of historic homes, handling everything from routine maintenance to full-scale renovations. We recognize and adapt to each home's quirks and history on a case-by-case basis, and our work will always be faithful to the time period and unique character of your home.\n",
+      "image": "/src/assets/img/uploads/evelyn-street-view.jpg",
+      "imageAlt": "A 1910 home in Princeton, NJ served by Artisanal Restoration"
     },
     {
-      "serviceHeading": "Restoration of antique pieces",
-      "serviceDescription": "We refresh worn finishes, restore scratched and chipped surfaces, and repair structural damage in antique furniture and cabinetry. Master carpenter Randall Basti of Artisanal Restoration has both the eye for detail to recongnize and preserve the unique personality of the original piece, and the technical skill to handle the complex joinery and intricate ornamentation usually involved in the restoration.\n",
-      "serviceImage": "/src/assets/img/uploads/furniture-restoration.jpg",
-      "serviceImageAlt": "An antique table being restored in the Artisanal Restoration workshop"
+      "name": "Restoration of antique pieces",
+      "description": "We refresh worn finishes, restore scratched and chipped surfaces, and repair structural damage in antique furniture and cabinetry. Master carpenter Randall Basti of Artisanal Restoration has both the eye for detail to recongnize and preserve the unique personality of the original piece, and the technical skill to handle the complex joinery and intricate ornamentation usually involved in the restoration.\n",
+      "image": "/src/assets/img/uploads/furniture-restoration.jpg",
+      "imageAlt": "An antique table being restored in the Artisanal Restoration workshop"
     },
     {
-      "serviceHeading": "Custom-built furniture and cabinets",
-      "serviceDescription": "We build custom furniture and cabinetry to almost any size and specification and will work with you through the design process from start to finish to ensure the piece exactly fits, both functionally and aesthetically, the special role it will fulfill in your home.\n",
-      "serviceImage": "/src/assets/img/uploads/furniture-painting-table.jpg",
-      "serviceImageAlt": "A custom table built to match the art and wall color in a parlor"
+      "name": "Custom-built furniture and cabinets",
+      "description": "We build custom furniture and cabinetry to almost any size and specification and will work with you through the design process from start to finish to ensure the piece exactly fits, both functionally and aesthetically, the special role it will fulfill in your home.\n",
+      "image": "/src/assets/img/uploads/furniture-painting-table.jpg",
+      "imageAlt": "A custom table built to match the art and wall color in a parlor"
     },
     {
-      "serviceHeading": "Decks and porches",
-      "serviceDescription": "We offer both restoration and new construction of decks and porches. We can repair rot damage, structural issues, and worn finishes, replace rotted structural framing, install decking surface, and build fences, rails, and stairs. Both repairs and new construction are made to last, using rot-resistant decking material and finishes, corrosion-resistant hardware, and structural framing designed to minimize damage from ground and water contact.\n",
-      "serviceImage": "/src/assets/img/uploads/deck-overhead.jpg",
-      "serviceImageAlt": "A second-story view of a deck restored by Artisanal Restoration"
+      "name": "Decks and porches",
+      "description": "We offer both restoration and new construction of decks and porches. We can repair rot damage, structural issues, and worn finishes, replace rotted structural framing, install decking surface, and build fences, rails, and stairs. Both repairs and new construction are made to last, using rot-resistant decking material and finishes, corrosion-resistant hardware, and structural framing designed to minimize damage from ground and water contact.\n",
+      "image": "/src/assets/img/uploads/deck-overhead.jpg",
+      "imageAlt": "A second-story view of a deck restored by Artisanal Restoration"
     },
     {
-      "serviceHeading": "Additional services",
-      "serviceDescription": "Additional services offered by Artisanal Restoration include:\n\n* Bespoke home additions\n* Custom trim and finish carpentry\n* Stair construction and restoration\n* Service of windows and doors\n* Interior and exterior rot restoration\n* Regular service and maintenance of historic homes\n",
-      "serviceImage": "/src/assets/img/uploads/evelyn-stairs-fineal.jpg",
-      "serviceImageAlt": "A detail image of the finish carpentry on a fineal custom-built for a staircase in a Princeton, NJ home"
+      "name": "Additional services",
+      "description": "Additional services offered by Artisanal Restoration include:\n\n* Bespoke home additions\n* Custom trim and finish carpentry\n* Stair construction and restoration\n* Service of windows and doors\n* Interior and exterior rot restoration\n* Regular service and maintenance of historic homes\n",
+      "image": "/src/assets/img/uploads/evelyn-stairs-fineal.jpg",
+      "imageAlt": "A detail image of the finish carpentry on a fineal custom-built for a staircase in a Princeton, NJ home"
     }
   ],
   "workingWithUsHeading": "Working with Artisanal Restoration",

@@ -35,10 +35,10 @@ fragment MyServicesPageParts on ServicesPage {
   servicesListHeading
   servicesList {
     __typename
-    serviceHeading
-    serviceDescription
-    serviceImage
-    serviceImageAlt
+    name
+    description
+    image
+    imageAlt
   }
 
   workingWithUsHeading

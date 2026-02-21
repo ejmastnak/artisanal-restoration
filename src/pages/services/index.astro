@@ -17,8 +17,8 @@ await optimizeTinaImages(content, [
 
 const imagesToOptimize = content.data.servicesPage.servicesList.map((service, idx) => {
   return {
-    srcPath: ['data', 'servicesPage', 'servicesList', `${idx}`, 'serviceImage'],
-    altPath: ['data', 'servicesPage', 'servicesList', `${idx}`, 'serviceImageAlt'],
+    srcPath: ['data', 'servicesPage', 'servicesList', `${idx}`, 'image'],
+    altPath: ['data', 'servicesPage', 'servicesList', `${idx}`, 'imageAlt'],
     width: 800,
     idx: idx,
   }

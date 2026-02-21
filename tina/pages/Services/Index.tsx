@@ -48,19 +48,19 @@ export default function ServicesPage(props: Props) {
         <h2 data-tina-field={tinaField(servicesPage, "servicesListHeading")} className="text-4xl text-center  font-['Latin_Modern_Roman']">{servicesPage.servicesListHeading}</h2>
         <div className="mt-12">
           {servicesPage.servicesList.map((service, idx) => (
-            <div key={service.serviceHeading} className={`my-12 md:flex gap-x-8 ${idx %2 == 0 ? 'md:flex-row-reverse' : ''}`}>
+            <div key={service.name} className={`my-12 md:flex gap-x-8 ${idx %2 == 0 ? 'md:flex-row-reverse' : ''}`}>
               <img
-                data-tina-field={tinaField(service, "serviceImage")}
-                src={service.serviceImage}
-                alt={service.serviceImageAlt}
+                data-tina-field={tinaField(service, "image")}
+                src={service.image}
+                alt={service.imageAlt}
                 className="shrink-0 w-full h-56 mx-auto md:w-80 md:h-80 lg:w-96 lg:h-96 object-cover rounded-md"
               />
               <div className="mt-8 text-gray-800">
-                <h3 data-tina-field={tinaField(service, "serviceHeading")} className="text-center mb-5 text-3xl font-['Latin_Modern_Roman']">
-                  {service.serviceHeading}
+                <h3 data-tina-field={tinaField(service, "name")} className="text-center mb-5 text-3xl font-['Latin_Modern_Roman']">
+                  {service.name}
                 </h3>
-                <div data-tina-field={tinaField(service, "serviceDescription")} className="max-w-xl prose">
-                  <TinaMarkdown content={service.serviceDescription} />
+                <div data-tina-field={tinaField(service, "description")} className="max-w-xl prose">
+                  <TinaMarkdown content={service.description} />
                 </div>
               </div>
             </div>
