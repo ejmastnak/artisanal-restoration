@@ -2,7 +2,7 @@ import { useTina, tinaField } from "tinacms/dist/react";
 import LinkButton from '@tina/components/LinkButton.tsx'
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import PageWrapper from '@tina/shared/PageWrapper.tsx'
-import Testimonial from '@tina/components/Testimonial.tsx'
+import TestimonialComponent from '@tina/components/Testimonial.tsx'
 
 import type { MyTestimonialsPageQuery, MyTestimonialsPageQueryVariables, Testimonial } from "@tina/__generated__/types";
 type Props = {
@@ -37,11 +37,11 @@ export default function TestimonialsPage(props: Props) {
       <ul className="mt-12 ml-5 space-y-8">
         {props.testimonials.map((testimonial, idx) => (
           <li>
-            <Testimonial client={testimonial.client} reverse={idx % 2 == 0 ? false : true}>
+            <TestimonialComponent client={testimonial.client} reverse={idx % 2 == 0 ? false : true}>
               <div className="myprose">
                 <TinaMarkdown content={testimonial.testimonial} />
               </div>
-            </Testimonial>
+            </TestimonialComponent>
           </li>
         ))}
       </ul>

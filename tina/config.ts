@@ -38,12 +38,12 @@ export default defineConfig({
   },
   schema: {
     collections: [
-      AboutPageCollection,
-      ContactPageCollection,
       HomePageCollection,
-      PortfolioPageCollection,
+      AboutPageCollection,
       ServicesPageCollection,
+      PortfolioPageCollection,
       TestimonialsPageCollection,
+      ContactPageCollection,
 
       NavCollection,
       FooterCollection,

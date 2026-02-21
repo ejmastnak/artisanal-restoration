@@ -8,7 +8,7 @@ export const HomePageCollection: Collection = {
   format: "json",
 
   ui: {
-    // router: () => "/",
+    router: () => "/",
     allowedActions: {
       create: false,
       delete: false,

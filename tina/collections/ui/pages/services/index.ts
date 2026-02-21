@@ -8,7 +8,7 @@ export const ServicesPageCollection: Collection = {
   format: "json",
 
   ui: {
-    // router: () => "/services",
+    router: () => "/services",
     allowedActions: {
       create: false,
       delete: false,

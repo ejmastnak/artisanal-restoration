@@ -8,7 +8,7 @@ export const PortfolioPageCollection: Collection = {
   format: "json",
 
   ui: {
-    // router: () => "/portfolio",
+    router: () => "/portfolio",
     allowedActions: {
       create: false,
       delete: false,

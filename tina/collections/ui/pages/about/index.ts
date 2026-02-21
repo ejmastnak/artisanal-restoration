@@ -8,7 +8,7 @@ export const AboutPageCollection: Collection = {
   format: "json",
 
   ui: {
-    // router: () => "/about",
+    router: () => "/about",
     allowedActions: {
       create: false,
       delete: false,

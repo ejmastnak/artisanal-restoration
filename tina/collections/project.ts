@@ -16,7 +16,14 @@ export const ProjectCollection: Collection = {
     filename: {
       readonly: true,
       slugify: (values) => {
-        return values.title.toLowerCase().replace(/ /g, '-').replace(/\./g, '')
+        const title = values?.title ?? '';
+        return title
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9\s-]/g, '')
+        .replace(/\s+/g, '-');
       },
     },
 

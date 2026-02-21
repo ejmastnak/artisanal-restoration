@@ -8,7 +8,7 @@ export const TestimonialsPageCollection: Collection = {
   format: "json",
 
   ui: {
-    // router: () => "/testimonials",
+    router: () => "/testimonials",
     allowedActions: {
       create: false,
       delete: false,

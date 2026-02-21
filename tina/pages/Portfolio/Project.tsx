@@ -30,7 +30,7 @@ export default function Project(props: Props) {
             alt={project.overviewImageAlt}
             className="shrink-0 w-full h-56 mx-auto md:w-80 md:h-80 lg:w-96 lg:h-96 object-cover rounded-md"
           />
-          <p className="mt-1 text-sm text-gray-700 text-center mx-auto">{project.overviewImageCaption}</p>
+          <p className="mt-1 text-sm text-gray-700 text-center mx-auto max-w-md">{project.overviewImageCaption}</p>
         </div>
         <div className="mt-5 md:mt-2 text-gray-800">
           <h2 className="text-3xl font-['Latin_Modern_Roman']">{project.overviewHeading}</h2>
