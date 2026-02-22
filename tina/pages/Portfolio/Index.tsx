@@ -21,7 +21,7 @@ export default function PortfolioPage(props: Props) {
   return (
     <PageWrapper>
 
-      <h1 data-tina-field={tinaField(portfolioPage, "heading")} className="text-5xl font-['Latin_Modern_Roman']">{portfolioPage.h1}</h1>
+      <h1 data-tina-field={tinaField(portfolioPage, "h1")} className="text-5xl font-['Latin_Modern_Roman']">{portfolioPage.h1}</h1>
 
       <div data-tina-field={tinaField(portfolioPage, "summary")} className="mt-10 prose max-w-xl">
         <TinaMarkdown content={portfolioPage.summary} />

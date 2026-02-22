@@ -1,6 +1,8 @@
 import { forwardRef } from "react";
 import type { ComponentPropsWithoutRef } from "react";
 
+type Props = ComponentPropsWithoutRef<"button">;
+
 const PrimaryButton = forwardRef<HTMLButtonElement, Props>(
   ({ className, children, ...props }, ref) => {
     return (

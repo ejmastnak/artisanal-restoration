@@ -1,10 +1,10 @@
 import { tinaField } from "tinacms/dist/react";
-import type { MyHomePageQuery, } from "@tina/__generated__/types";
+import type { HomePage, } from "@tina/__generated__/types";
 import LinkButton from '@tina/components/LinkButton.tsx'
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 type Props = {
-  homePage: MyHomePageQuery;
+  homePage: HomePage;
 };
 
 export default function Services({ homePage, }: Props) {

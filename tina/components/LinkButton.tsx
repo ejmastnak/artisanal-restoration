@@ -5,7 +5,6 @@ type Props = ComponentPropsWithoutRef<"a"> & {
   tinaField?: string;
 };
 
-
 export default function LinkButton({ tinaField, className, children, ...props }: Props) {
 
   return (

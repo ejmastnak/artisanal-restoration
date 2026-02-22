@@ -1,6 +1,7 @@
 import type { ImageMetadata } from 'astro';
-import { getImage, type GetImageResult } from 'astro:assets';
-import { resolveTinaImage } from '@/lib/resolveImage';
+import { getImage } from 'astro:assets';
+import type { GetImageResult } from 'astro';
+import { resolveTinaImage } from '@/lib/resolveImage.ts';
 
 type Path = readonly string[];
 

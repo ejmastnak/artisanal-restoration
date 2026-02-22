@@ -4,8 +4,8 @@ import PageWrapper from '@tina/shared/PageWrapper.tsx'
 
 import type { Project, ProjectQueryVariables } from "@tina/__generated__/types";
 type Props = {
-  variables: MyPortfolioPageQueryVariables;
-  data: MyPortfolioPageQuery;
+  variables: ProjectQueryVariables;
+  data: ProjectQuery;
   query: string;
 };
 
@@ -19,7 +19,6 @@ export default function Project(props: Props) {
 
   return (
     <PageWrapper>
-
       <h1 data-tina-field={tinaField(project, "title")} className="text-5xl font-['Latin_Modern_Roman']">{project.title}</h1>
 
       {/* Overview */}

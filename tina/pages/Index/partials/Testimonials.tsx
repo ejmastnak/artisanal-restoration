@@ -1,11 +1,11 @@
 import { tinaField } from "tinacms/dist/react";
-import type { MyHomePageQuery, } from "@tina/__generated__/types";
+import type { HomePage, } from "@tina/__generated__/types";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import Testimonial from '@tina/components/Testimonial.tsx'
 import LinkButton from '@tina/components/LinkButton.tsx'
 
 type Props = {
-  homePage: MyHomePageQuery;
+  homePage: HomePage;
 };
 
 export default function Testimonials({ homePage, }: Props) {

@@ -63,7 +63,6 @@ export const ServicesPageCollection: Collection = {
       label: 'Services image alt text',
       type: 'string',
     },
-
     {
       name: 'servicesListHeading',
       label: 'Services heading',
