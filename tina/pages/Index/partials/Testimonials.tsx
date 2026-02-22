@@ -11,13 +11,13 @@ type Props = {
 export default function Testimonials({ homePage, }: Props) {
   return (
     <div>
-      <h2 className="text-center text-5xl font-['Latin_Modern_Roman']">{homePage.testimonialsHeading}</h2>
+      <h2 data-tina-field={tinaField(homePage, "testimonialsHeading")} className="text-center text-5xl font-['Latin_Modern_Roman']">{homePage.testimonialsHeading}</h2>
 
-      <p className="mt-10 prose">{homePage.testimonialsDescription}</p>
+      <p data-tina-field={tinaField(homePage, "testimonialsDescription")} className="mt-10 prose">{homePage.testimonialsDescription}</p>
 
       <ul className="mt-10 ml-5 space-y-8">
         {homePage.featuredTestimonials.map((testimonial, idx) => (
-          <li key={testimonial.testimonial.id}>
+          <li data-tina-field={tinaField(testimonial, "testimonial")} key={testimonial.testimonial.id}>
             <Testimonial client={testimonial.testimonial.client} reverse={idx % 2 == 0 ? false : true}>
               <div className="prose">
                 <TinaMarkdown content={testimonial.testimonial.testimonial} />
