@@ -139,11 +139,6 @@ export const HomePageCollection: Collection = {
       type: 'string',
     },
     {
-      name: 'testimonialsLinkText',
-      label: 'Testimonials page link text',
-      type: 'string',
-    },
-    {
       name: 'featuredTestimonials',
       label: 'Featured testimonials',
       type: 'object',
@@ -172,7 +167,12 @@ export const HomePageCollection: Collection = {
           }
         }
       ],
-    }
+    },
+    {
+      name: 'testimonialsLinkText',
+      label: 'Testimonials page link text',
+      type: 'string',
+    },
 
   ],
 };

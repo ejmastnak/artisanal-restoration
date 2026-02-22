@@ -3,7 +3,7 @@ import type { Collection } from "tinacms";
 export const ProjectCollection: Collection = {
 
   name: "project",
-  label: "Portfolio Projects",
+  label: "Portfolio Projects Collection",
   path: "tina/content/projects",
   format: "json",
 
