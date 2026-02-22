@@ -32,15 +32,17 @@ await optimizeTinaImages(content, [
   },
 ]);
 
-const imagesToOptimize = content.data.project.bodySections.map((project, idx) => {
-  return {
-    srcPath: ['data', 'project', 'bodySections', `${idx}`, 'image'],
-    altPath: ['data', 'project', 'bodySections', `${idx}`, 'imageAlt'],
-    width: 800,
-    idx: idx,
-  }
-});
-await optimizeTinaImages(content, imagesToOptimize);
+if (content.data.project.bodySections) {
+  const imagesToOptimize = content.data.project.bodySections.map((project, idx) => {
+    return {
+      srcPath: ['data', 'project', 'bodySections', `${idx}`, 'image'],
+      altPath: ['data', 'project', 'bodySections', `${idx}`, 'imageAlt'],
+      width: 800,
+      idx: idx,
+    }
+  });
+  await optimizeTinaImages(content, imagesToOptimize);
+}
 ---
 
 <BaseLayout head={head}>
