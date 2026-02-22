@@ -23,31 +23,38 @@ export default function PortfolioPage(props: Props) {
 
       <h1 data-tina-field={tinaField(portfolioPage, "heading")} className="text-5xl font-['Latin_Modern_Roman']">{portfolioPage.h1}</h1>
 
-      <div data-tina-field={tinaField(portfolioPage, "summary")} className="prose mt-10 max-w-xl mb-12 pb-12 border-b border-gray-300 ">
+      <div data-tina-field={tinaField(portfolioPage, "summary")} className="mt-10 prose max-w-xl">
         <TinaMarkdown content={portfolioPage.summary} />
       </div>
 
-      <div className="flex flex-col gap-y-32">
+      {/* List of projects */}
+      <div className="mt-12 flex flex-col gap-y-24 md:gap-y-28 max-w-5xl mx-auto">
         {portfolioPage.featuredProjects.map((project, idx) => (
-          <div key={project.project.id} data-tina-field={tinaField(project, "project")} className={`md:flex gap-x-8 ${idx %2 == 0 ? 'md:flex-row-reverse' : ''}`}>
-            <a href={`/portfolio/${project.project._sys.filename}`} className="hover:shadow-md hover:outline hover:outline-1 hover:outline-gray-300 w-fit h-fit rounded-md overflow-clip">
+          <div key={project.project.id} data-tina-field={tinaField(project, "project")} className={`md:flex gap-x-10 ${idx %2 == 1 ? 'md:flex-row-reverse' : ''}`}>
+            <div className="text-gray-800 max-w-lg mx-auto">
+              <h2 className="text-center text-3xl font-['Latin_Modern_Roman']"><a href={`/portfolio/${project.project._sys.filename}`} className="hover:underline">{project.project.title}</a></h2>
+
+              {/* Mobile image */}
               <img
                 src={project.project.featuredImage}
                 alt={project.project.featuredImageAlt}
-                className="shrink-0 w-full h-56 mx-auto md:w-80 md:h-80 lg:w-96 lg:h-96 object-cover"
+                className="md:hidden my-8 shrink-0 w-full max-w-sm h-64 xs:h-72 mx-auto object-cover rounded-md"
               />
-            </a>
-            <div className="mt-8 text-gray-800 max-w-xl">
-              <h2 className="text-center mb-5 text-3xl font-['Latin_Modern_Roman']"><a href={`/portfolio/${project.project._sys.filename}`} className="hover:underline">{project.project.title}</a></h2>
-              <div className="prose">
+
+              <div className="my-8 prose text-center md:text-left">
                 <TinaMarkdown content={project.project.summary} />
               </div>
-              <div className="mt-5 w-fit block mx-auto">
+              <div className="w-fit block mx-auto">
                 <LinkButton href={`/portfolio/${project.project._sys.filename}`}>
                   Read more
                 </LinkButton>
               </div>
             </div>
+            <img
+              src={project.project.featuredImage}
+              alt={project.project.featuredImageAlt}
+              className="mt-5 hidden md:block shrink-0 w-full max-w-md h-64 md:h-80 mx-auto md:max-w-xs lg:max-w-sm lg:h-80 object-cover rounded-md"
+            />
           </div>
         ))}
       </div>

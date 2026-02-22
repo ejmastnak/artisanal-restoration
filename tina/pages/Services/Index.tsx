@@ -24,17 +24,24 @@ export default function ServicesPage(props: Props) {
     ),
   };
 
+  const mdListItemsLeft = {
+    ul: (props) => (
+      <ul className="text-left">{props.children}</ul>
+    ),
+  };
+
   return (
     <PageWrapper>
 
       <h1 data-tina-field={tinaField(servicesPage, "h1")} className="text-5xl font-['Latin_Modern_Roman']">{servicesPage.h1}</h1>
 
-      <div className="mt-16 md:mt-20 md:flex md:flex-row-reverse md:gap-x-16">
-        <div className="mt-5 max-w-xl">
+      <div className="mt-10 md:mt-16 flex flex-col md:flex-row md:flex-row-reverse gap-y-8 md:gap-x-16">
+        <div className="max-w-xl">
           <div data-tina-field={tinaField(servicesPage, "summary")} className="prose">
             <TinaMarkdown content={servicesPage.summary} />
           </div>
-          <LinkButton data-tina-field={tinaField(servicesPage, "contactButtonText")} className="my-5" href="/contact">{servicesPage.contactButtonText}</LinkButton>
+          {/* Desktop contact button */}
+          <LinkButton data-tina-field={tinaField(servicesPage, "contactButtonText")} className="my-5 hidden md:inline-flex" href="/contact">{servicesPage.contactButtonText}</LinkButton>
         </div>
         <img 
           data-tina-field={tinaField(servicesPage, "servicesImage")}
@@ -44,25 +51,31 @@ export default function ServicesPage(props: Props) {
         />
       </div>
 
-      <div className="mt-24">
+      {/* Mobile contact button */}
+      <div className="my-8 mx-auto w-fit md:hidden">
+        <LinkButton data-tina-field={tinaField(servicesPage, "contactButtonText")} href="/contact">{servicesPage.contactButtonText}</LinkButton>
+      </div>
+
+      {/* Featured services */}
+      <div className="mt-20">
         <h2 data-tina-field={tinaField(servicesPage, "servicesListHeading")} className="text-4xl text-center  font-['Latin_Modern_Roman']">{servicesPage.servicesListHeading}</h2>
-        <div className="mt-12">
+        <div className="mt-12 flex flex-col gap-y-20 md:gap-y-28 max-w-5xl mx-auto">
           {servicesPage.servicesList.map((service, idx) => (
-            <div key={service.name} className={`my-12 md:flex gap-x-8 ${idx %2 == 0 ? 'md:flex-row-reverse' : ''}`}>
+            <div key={service.name} className={`md:flex gap-x-10 ${idx %2 == 1 ? 'md:flex-row-reverse' : ''}`}>
+              <div className="text-gray-800 max-w-lg mx-auto">
+                <h3 data-tina-field={tinaField(service, "name")} className="text-center text-2xl font-['Latin_Modern_Roman']">
+                  {service.name}
+                </h3>
+                <div data-tina-field={tinaField(service, "description")} className="mt-5 prose text-center md:text-left">
+                  <TinaMarkdown content={service.description} components={mdListItemsLeft} />
+                </div>
+              </div>
               <img
                 data-tina-field={tinaField(service, "image")}
                 src={service.image}
                 alt={service.imageAlt}
-                className="shrink-0 w-full h-56 mx-auto md:w-80 md:h-80 lg:w-96 lg:h-96 object-cover rounded-md"
+                className="mt-5 shrink-0 w-full max-w-md h-64 mx-auto md:max-w-xs lg:max-w-sm lg:h-80 object-cover rounded-md"
               />
-              <div className="mt-8 text-gray-800">
-                <h3 data-tina-field={tinaField(service, "name")} className="text-center mb-5 text-3xl font-['Latin_Modern_Roman']">
-                  {service.name}
-                </h3>
-                <div data-tina-field={tinaField(service, "description")} className="max-w-xl prose">
-                  <TinaMarkdown content={service.description} />
-                </div>
-              </div>
             </div>
           ))}
         </div>
@@ -71,7 +84,7 @@ export default function ServicesPage(props: Props) {
       {/* Working with Artisanal Restoration */}
       <div className="mt-20">
         <h2 data-tina-field={tinaField(servicesPage, "workingWithUsHeading")} className="text-4xl font-['Latin_Modern_Roman']">{servicesPage.workingWithUsHeading}</h2>
-        <div data-tina-field={tinaField(servicesPage, "workingWithUsBody")} className="mt-5 prose">
+        <div data-tina-field={tinaField(servicesPage, "workingWithUsBody")} className="mt-10 prose">
           <TinaMarkdown content={servicesPage.workingWithUsBody} components={mdLinkComponents} />
         </div>
       </div>

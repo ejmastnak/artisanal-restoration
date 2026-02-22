@@ -36,7 +36,7 @@ export default function AboutPage(props: Props) {
       </div>
 
       {/* Mobile image */}
-      <div className="sm:hidden mt-6">
+      <div className="md:hidden mt-6">
         <img
           data-tina-field={tinaField(aboutPage, "servicesImage")}
           src={aboutPage.servicesImage}
