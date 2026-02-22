@@ -5,7 +5,7 @@
   },
   "h1": "Contact",
   "intro": "Schedule a consultation or ask questions using the contact form below. We need either your email or phone so we can respond to you; leave whichever you prefer.\n\nYou can also contact us directly by phone or email—[see below](#contact-directly).\n",
-  "contactFormHeading": "Contact form",
+  "contactFormHeading": "Contact form (currently disabled)",
   "contactForm": {
     "contactFormNameLabel": "Name",
     "contactFormNamePlaceholder": "Your name",

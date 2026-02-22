@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useRef, useState, useEffect  } from "react"
 import type { FormEvent } from "react"
 import { useTina, tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
@@ -38,6 +38,11 @@ export default function ContactPage(props: Props) {
   const [emailRequiredMessage, setEmailRequiredMessage] = useState("")
   const [phoneRequiredMessage, setPhoneRequiredMessage] = useState("")
 
+  const FEEDBACK_MESSAGE = "This is a message meant to show that the form is responsive to user input. However, the form is currently disabled from sending messages, and nothing happens when you submit the form besides this message appearing."
+  const FEEDBACK_TIMEOUT_MS = 10000
+  const [feedbackMessage, setFeedbackMessage] = useState(null)
+  const timeoutRef = useRef(null)
+
   const CONTACT_METHOD_PHONE = "phone"
   const CONTACT_METHOD_EMAIL = "email"
   const [contactMethod, setContactMethod] = useState(CONTACT_METHOD_PHONE)
@@ -61,8 +66,26 @@ export default function ContactPage(props: Props) {
       return
     }
 
-    console.log("Form submitted!");
+    setFeedbackMessage(FEEDBACK_MESSAGE)
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+
+    timeoutRef.current = setTimeout(() => {
+      setFeedbackMessage(null);
+      timeoutRef.current = null;
+    }, FEEDBACK_TIMEOUT_MS);
+
   }
+
+  // Clean up timeoutRef
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
 
   return (
     <PageWrapper>
@@ -157,7 +180,6 @@ export default function ContactPage(props: Props) {
               <TextInput
                 id="phone"
                 type="tel"
-                pattern="([0-9]{3}) [0-9]{3}-[0-9]{4}"
                 className="inline-block w-72"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
@@ -173,6 +195,12 @@ export default function ContactPage(props: Props) {
           <PrimaryButton className="mt-8" type="submit" >
             {contactPage.contactForm.contactFormSubmitButtonText}
           </PrimaryButton>
+
+          {feedbackMessage &&
+            <p className="mt-1 max-w-md text-yellow-800 font-medium">
+              {feedbackMessage}
+            </p>
+          }
 
         </form>
 
