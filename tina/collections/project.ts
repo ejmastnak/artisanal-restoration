@@ -1,32 +1,19 @@
 import type { Collection } from "tinacms";
+import { CMS_HTML_HEAD_FIELD_DESCRIPTION, CMS_HTML_HEAD_TITLE_FIELD_DESCRIPTION, CMS_HTML_HEAD_DESCRIPTION_FIELD_DESCRIPTION, } from "@src/assets/config.ts";
 
 export const ProjectCollection: Collection = {
-
   name: "project",
   label: "Portfolio Projects Collection",
   path: "tina/content/projects",
   format: "json",
-
   ui: {
     router({ document }) {
       return `/portfolio/${document._sys.filename}`;
     },
-
-    // Use slugified title name as project filename
     filename: {
-      readonly: true,
-      slugify: (values) => {
-        const title = values?.title ?? '';
-        return title
-        .normalize('NFD')
-        .replace(/[\u0300-\u036f]/g, '')
-        .toLowerCase()
-        .trim()
-        .replace(/[^a-z0-9\s-]/g, '')
-        .replace(/\s+/g, '-');
-      },
+      showFirst: true,
+      description: "The filename field is used internally by the content management system and is visible only to you, not to visitors. I suggest a format like \"evelyn-stairs\", \"sunroom\", \"anderson-rot-restoration\", etc.",
     },
-
   },
   defaultItem: {
     overviewHeading: "About the project",
@@ -36,16 +23,19 @@ export const ProjectCollection: Collection = {
     {
       name: "head",
       label: "HTML head",
+      description: CMS_HTML_HEAD_FIELD_DESCRIPTION, 
       type: "object",
       fields: [
         {
           name: "title",
           label: "Title",
+          description: CMS_HTML_HEAD_TITLE_FIELD_DESCRIPTION,
           type: "string",
         },
         {
           name: "description",
           label: "Description",
+          description: CMS_HTML_HEAD_DESCRIPTION_FIELD_DESCRIPTION,
           type: "string",
         },
       ],

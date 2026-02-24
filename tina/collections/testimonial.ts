@@ -1,29 +1,16 @@
 import type { Collection } from "tinacms";
 
 export const TestimonialCollection: Collection = {
-
   name: "testimonial",
   label: "Testimonials Collection",
   path: "tina/content/testimonials",
   format: "json",
-
   ui: {
     filename: {
-      readonly: true,
-      slugify: (values) => {
-        const client = values?.client ?? '';
-        return client
-        .normalize('NFD')
-        .replace(/[\u0300-\u036f]/g, '')
-        .toLowerCase()
-        .trim()
-        .replace(/[^a-z0-9\s-]/g, '')
-        .replace(/\s+/g, '-');
-      },
+      showFirst: true,
+      description: "The filename field is used internally by the content management system and is visible only to you, not to visitors. I suggest a format based on the reviewer's name like \"john-doe\", \"jane-smith\", etc..",
     },
   },
-
-
   fields: [
     {
       name: 'testimonial',

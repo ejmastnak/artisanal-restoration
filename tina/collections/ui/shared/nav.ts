@@ -3,7 +3,7 @@ import type { Collection } from "tinacms";
 export const NavCollection: Collection = {
 
   name: "nav",
-  label: "Nav",
+  label: "Header",
   path: "tina/content/ui/shared/nav",
   format: "json",
 
@@ -17,7 +17,7 @@ export const NavCollection: Collection = {
   fields: [
     {
       name: "navLinks",
-      label: "Nav Links",
+      label: "Header Links",
       type: "object",
       list: true,
       itemProps: (item) => {
