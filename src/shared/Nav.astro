@@ -13,24 +13,6 @@ const content = await client.queries.myNav({ relativePath: "index.json" });
 const nav = content.data.nav;
 ---
 
-<script>
-const menu = document.getElementById("mobile-menu-el-menu");
-const bars = document.getElementById("mobile-menu-bars-icon");
-const xmark = document.getElementById("mobile-menu-x-icon");
-
-// Watch for changes
-const observer = new MutationObserver(mutations => {
-  for (const m of mutations) {
-    if (m.type === "attributes" && m.attributeName === "open") {
-      const open = menu.hasAttribute("open");
-      bars.classList.toggle("hidden", open);
-      xmark.classList.toggle("hidden", !open);
-    }
-  }
-});
-observer.observe(menu, { attributes: true });
-</script>
-
 <nav class={`sticky relative top-0 bg-white border-b z-20 py-5 px-6 ${className ?? ""}`} >
 
   <div class="max-w-5xl mx-auto">
@@ -64,3 +46,21 @@ observer.observe(menu, { attributes: true });
     </div>
   </div>
 </nav>
+
+<script>
+const menu = document.getElementById("mobile-menu-el-menu");
+const bars = document.getElementById("mobile-menu-bars-icon");
+const xmark = document.getElementById("mobile-menu-x-icon");
+
+// Watch for changes
+const observer = new MutationObserver(mutations => {
+  for (const m of mutations) {
+    if (m.type === "attributes" && m.attributeName === "open") {
+      const open = menu.hasAttribute("open");
+      bars.classList.toggle("hidden", open);
+      xmark.classList.toggle("hidden", !open);
+    }
+  }
+});
+observer.observe(menu, { attributes: true });
+</script>
