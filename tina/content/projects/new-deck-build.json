@@ -1,0 +1,63 @@
+{
+  "head": {
+    "title": "New deck build",
+    "description": ""
+  },
+  "title": "Newly-built deck and stairs",
+  "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n",
+  "featuredImage": "/src/assets/img/uploads/new-deck-build/complete.jpg",
+  "featuredImageAlt": "Completed deck and stairs with freshly paintly railing descending into a brick courtyard",
+  "overviewHeading": "About the project",
+  "overviewText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n",
+  "overviewImage": "/src/assets/img/uploads/new-deck-build/complete.jpg",
+  "overviewImageAlt": "Completed deck and stairs with freshly paintly railing descending into a brick courtyard",
+  "overviewImageCaption": "The completed deck and stairs descending into the paved courtyard",
+  "galleryHeading": "Gallery",
+  "gallerySections": [
+    {
+      "image": "/src/assets/img/uploads/new-deck-build/framing.jpg",
+      "imageAlt": "Framing",
+      "imageCaption": "Framing"
+    },
+    {
+      "image": "/src/assets/img/uploads/new-deck-build/decking.jpg",
+      "imageAlt": "Decking",
+      "imageCaption": "Decking"
+    },
+    {
+      "image": "/src/assets/img/uploads/new-deck-build/corner-detail.jpg",
+      "imageAlt": "Corner detail",
+      "imageCaption": "Corner detail"
+    },
+    {
+      "image": "/src/assets/img/uploads/new-deck-build/railing.jpg",
+      "imageAlt": "Railing",
+      "imageCaption": "Railing"
+    },
+    {
+      "image": "/src/assets/img/uploads/new-deck-build/stairs-stringers.jpg",
+      "imageAlt": "Stair stringers",
+      "imageCaption": "Stair stringers"
+    },
+    {
+      "image": "/src/assets/img/uploads/new-deck-build/stairs-treads.jpg",
+      "imageAlt": "Stair treads",
+      "imageCaption": "Stair treads"
+    },
+    {
+      "image": "/src/assets/img/uploads/new-deck-build/stairs-risers.jpg",
+      "imageAlt": "Stair risers",
+      "imageCaption": "Stair risers"
+    },
+    {
+      "image": "/src/assets/img/uploads/new-deck-build/stairs-complete.jpg",
+      "imageAlt": "Complete stairs",
+      "imageCaption": "Complete stairs"
+    },
+    {
+      "image": "/src/assets/img/uploads/new-deck-build/complete.jpg",
+      "imageAlt": "Complete deck",
+      "imageCaption": "Complete deck"
+    }
+  ]
+}
