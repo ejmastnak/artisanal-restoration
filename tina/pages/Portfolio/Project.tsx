@@ -40,10 +40,10 @@ export default function Project(props: Props) {
         </div>
       </div>
 
-      <h2 data-tina-field={tinaField(project, "bodyHeading")} className="mt-10 text-4xl font-['Latin_Modern_Roman'] text-center">{project.bodyHeading}</h2>
+      <h2 data-tina-field={tinaField(project, "writeUpHeading")} className="mt-10 text-4xl font-['Latin_Modern_Roman'] text-center">{project.writeUpHeading}</h2>
 
       <div className="mt-10 flex flex-col gap-y-16 md:gap-y-20">
-        {project.bodySections?.map((section, idx) => (
+        {project.writeUpSections?.map((section, idx) => (
           <div key={section.image} className={`md:flex gap-x-8 ${idx % 2 == 0 ? 'md:flex-row-reverse' : ''}`}>
             <div>
               <img

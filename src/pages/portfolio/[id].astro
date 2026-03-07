@@ -32,11 +32,11 @@ await optimizeTinaImages(content, [
   },
 ]);
 
-if (content.data.project.bodySections) {
-  const imagesToOptimize = content.data.project.bodySections.map((project, idx) => {
+if (content.data.project.writeUpSections) {
+  const imagesToOptimize = content.data.project.writeUpSections.map((project, idx) => {
     return {
-      srcPath: ['data', 'project', 'bodySections', `${idx}`, 'image'],
-      altPath: ['data', 'project', 'bodySections', `${idx}`, 'imageAlt'],
+      srcPath: ['data', 'project', 'writeUpSections', `${idx}`, 'image'],
+      altPath: ['data', 'project', 'writeUpSections', `${idx}`, 'imageAlt'],
       width: 800,
       idx: idx,
     }

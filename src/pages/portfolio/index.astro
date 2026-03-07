@@ -7,17 +7,21 @@ import { optimizeTinaImages } from '@/lib/optimizeTinaImages';
 const content = await client.queries.myPortfolioPage({ relativePath: "index.json" });
 const head = content.data.portfolioPage.head;
 
-const imagesToOptimize = content.data.portfolioPage.featuredProjects.map((project, idx) => {
+const projectsResponse = await client.queries.projectConnection();
+const projects = projectsResponse.data.projectConnection.edges?.map((edge) => edge.node);
+
+const imagesToOptimize = projects.map((project, idx) => {
   return {
-    srcPath: ['data', 'portfolioPage', 'featuredProjects', `${idx}`, 'project', 'featuredImage'],
-    altPath: ['data', 'portfolioPage', 'featuredProjects', `${idx}`, 'project', 'featuredImageAlt'],
+    srcPath: [`${idx}`, 'featuredImage'],
+    altPath: [`${idx}`, 'featuredImageAlt'],
     width: 800,
     idx: idx,
   }
 });
-await optimizeTinaImages(content, imagesToOptimize);
+await optimizeTinaImages(projects, imagesToOptimize);
+
 ---
 
 <BaseLayout head={head}>
-  <Portfolio {...content} client:tina />
+  <Portfolio projects={projects} {...content} client:tina />
 </BaseLayout>

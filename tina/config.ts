@@ -3,8 +3,8 @@ import { defineConfig } from "tinacms";
 import { HomePageCollection } from "@tina/collections/ui/pages/index.ts";
 import { AboutPageCollection } from "@tina/collections/ui/pages/about/index.ts";
 import { ContactPageCollection } from "@tina/collections/ui/pages/contact/index.ts";
-import { PortfolioPageCollection } from "@tina/collections/ui/pages/portfolio/index.ts";
 import { ServicesPageCollection } from "@tina/collections/ui/pages/services/index.ts";
+import { PortfolioPageCollection } from "@tina/collections/ui/pages/portfolio/index.ts";
 import { TestimonialsPageCollection } from "@tina/collections/ui/pages/testimonials/index.ts";
 
 import { NavCollection } from "@tina/collections/ui/shared/nav.ts";

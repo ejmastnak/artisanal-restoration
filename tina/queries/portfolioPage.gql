@@ -27,28 +27,8 @@ fragment MyPortfolioPageParts on PortfolioPage {
 
   h1
   summary
-  featuredProjects {
-    __typename
-    project {
-      ... on Project {
-        __typename
-        title
-        summary
-        featuredImage
-        featuredImageAlt
-      }
-      ... on Document {
-        _sys {
-          filename
-          basename
-          hasReferences
-          breadcrumbs
-          path
-          relativePath
-          extension
-        }
-        id
-      }
-    }
-  }
+  linkButtonText
+  includesGalleryText
+  includesWriteUpText
+  includesGalleryAndWriteUpText
 }

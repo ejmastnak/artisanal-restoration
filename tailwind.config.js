@@ -26,7 +26,7 @@ export default {
         theme: {
           brown: '#4B3621',
           tan: '#b28d71',
-          tandark: '#a67b5b',
+          darktan: '#a67b5b',
           light: '#f8f4f2',
         },
       },

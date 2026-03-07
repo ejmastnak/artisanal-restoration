@@ -38,8 +38,8 @@ const projects = defineCollection({
     overviewImage: z.string().nullish(),
     overviewImageAlt: z.string().nullish(),
     overviewImageCaption: z.string().nullish(),
-    bodyHeading: z.string().nullish(),
-    bodySections: z.array(
+    writeUpHeading: z.string().nullish(),
+    writeUpSections: z.array(
       z.object({
         text: z.any().nullish(),
         image: z.string().nullish(),
@@ -50,4 +50,4 @@ const projects = defineCollection({
   }),
 });
 
-export const collections = { projects };
+export const collections = { projects, };

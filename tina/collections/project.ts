@@ -17,7 +17,7 @@ export const ProjectCollection: Collection = {
   },
   defaultItem: {
     overviewHeading: "About the project",
-    bodyHeading: "The restoration",
+    writeUpHeading: "The restoration",
   },
   fields: [
     {
@@ -53,6 +53,7 @@ export const ProjectCollection: Collection = {
     {
       name: 'featuredImage',
       label: 'Featured image',
+      description: 'This is the image shown on the main Projects page listing all of your portfolio projects',
       type: 'image',
     },
     {
@@ -73,6 +74,7 @@ export const ProjectCollection: Collection = {
     {
       name: 'overviewImage',
       label: 'Overview image',
+      description: 'This is the image shown at the top of this project\'s dedicated page. It can, but does not have to, be the same as the featured image shown on the main project page.',
       type: 'image',
     },
     {
@@ -86,13 +88,50 @@ export const ProjectCollection: Collection = {
       type: 'string',
     },
     {
-      name: 'bodyHeading',
-      label: 'Body heading',
+      name: 'galleryHeading',
+      label: 'Gallery heading (optional)',
+      description: 'Include this field only if this project will have a gallery',
       type: 'string',
     },
     {
-      name: 'bodySections',
-      label: 'Body sections',
+      name: 'gallerySections',
+      label: 'Gallery images',
+      description: 'Include this field only if this project will have a gallery',
+      type: 'object',
+      list: true,
+      ui: {
+        itemProps: (item) => {
+          return { label: item ? item.imageAlt : "Gallery image item" };
+        },
+      },
+      fields: [
+        {
+          name: 'image',
+          label: 'Image',
+          type: 'image',
+        },
+        {
+          name: 'imageAlt',
+          label: 'Image alt text',
+          type: 'string',
+        },
+        {
+          name: 'imageCaption',
+          label: 'Image caption (optional)',
+          type: 'string',
+        },
+      ],
+    },
+    {
+      name: 'writeUpHeading',
+      label: 'Write-up heading (optional)',
+      description: 'Include this field only if this project will have a write-up',
+      type: 'string',
+    },
+    {
+      name: 'writeUpSections',
+      label: 'Write-up sections',
+      description: 'Include this field only if this project will have a write-up',
       type: 'object',
       list: true,
       ui: {

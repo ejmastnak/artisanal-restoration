@@ -7,8 +7,7 @@ const content = await client.queries.myTestimonialsPage({ relativePath: "index.j
 const head = content.data.testimonialsPage.head;
 
 const testimonialsResponse = await client.queries.testimonialConnection();
-const testimonials = testimonialsResponse.data.testimonialConnection.edges.map((edge) => edge.node);
-
+const testimonials = testimonialsResponse.data.testimonialConnection.edges?.map((edge) => edge.node);
 ---
 
 <BaseLayout head={head}>
