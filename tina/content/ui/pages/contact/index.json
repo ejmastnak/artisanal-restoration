@@ -1,11 +1,11 @@
 {
   "head": {
     "title": "Contact",
-    "description": ""
+    "description": "Contact Artisanal Restoration to ask questions or schedule a consultation with master carpentry Randall Basti for historic home restoration, custom cabinetry, and carpentry in Middle Tennessee."
   },
   "h1": "Contact",
   "intro": "Schedule a consultation or ask questions using the contact form below. We need either your email or phone so we can respond to you; leave whichever you prefer.\n\nYou can also contact us directly by phone or email—[see below](#contact-directly).\n",
-  "contactFormHeading": "Contact form (currently disabled)",
+  "contactFormHeading": "Contact form",
   "contactForm": {
     "contactFormNameLabel": "Name",
     "contactFormNamePlaceholder": "Your name",

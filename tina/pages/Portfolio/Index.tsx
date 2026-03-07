@@ -33,7 +33,7 @@ export default function PortfolioPage(props: Props) {
       <div className="mt-12 flex flex-col gap-y-24 md:gap-y-28 max-w-5xl mx-auto">
         {props.projects.map((project, idx) => (
           <div key={project.id} data-tina-field={tinaField(project, "project")} className={`md:flex gap-x-10 ${idx %2 == 1 ? 'md:flex-row-reverse' : ''}`}>
-            <div className="text-gray-800 max-w-lg mx-auto">
+            <div className="text-gray-800 max-w-xl mx-auto">
               <h2 className="text-center text-3xl font-['Latin_Modern_Roman']"><a href={`/portfolio/${project._sys.filename}`} className="hover:underline">{project.title}</a></h2>
 
               {/* Mobile image */}
@@ -69,7 +69,7 @@ export default function PortfolioPage(props: Props) {
                 </LinkButton>
               </div>
             </div>
-            <a href={`/portfolio/${project._sys.filename}`} className="w-full h-fit">
+            <a href={`/portfolio/${project._sys.filename}`} className="w-full max-w-sm h-fit">
               <img
                 src={project.featuredImage}
                 alt={project.featuredImageAlt}
