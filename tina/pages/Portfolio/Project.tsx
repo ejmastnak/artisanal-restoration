@@ -28,7 +28,7 @@ export default function Project(props: Props) {
             data-tina-field={tinaField(project, "overviewImage")}
             src={project.overviewImage}
             alt={project.overviewImageAlt}
-            className="md:mt-5 shrink-0 w-full h-64 sm:h-72 max-w-md md:max-w-sm mx-auto md:w-80 md:h-80 lg:w-96 object-cover rounded-md"
+            className="md:mt-5 shrink-0 w-full h-72 max-w-sm mx-auto md:w-80 md:h-80 lg:w-96 object-cover rounded-md"
           />
           <p data-tina-field={tinaField(project, "overviewImageCaption")} className="mt-1 text-sm text-gray-700 text-center mx-auto max-w-md">{project.overviewImageCaption}</p>
         </div>
@@ -40,26 +40,53 @@ export default function Project(props: Props) {
         </div>
       </div>
 
-      <h2 data-tina-field={tinaField(project, "writeUpHeading")} className="mt-10 text-4xl font-['Latin_Modern_Roman'] text-center">{project.writeUpHeading}</h2>
+      {/* Gallery */}
+      { project.gallerySections &&
+        <section className="mt-10 ">
+          <h2 data-tina-field={tinaField(project, "galleryHeading")} className="text-4xl font-['Latin_Modern_Roman'] text-center">{project.galleryHeading}</h2>
 
-      <div className="mt-10 flex flex-col gap-y-16 md:gap-y-20">
-        {project.writeUpSections?.map((section, idx) => (
-          <div key={section.image} className={`md:flex gap-x-8 ${idx % 2 == 0 ? 'md:flex-row-reverse' : ''}`}>
-            <div>
-              <img
-                data-tina-field={tinaField(section, "image")}
-                src={section.image}
-                alt={section.imageAlt}
-                className="shrink-0 w-full h-72 mx-auto max-w-md md:max-w-none md:w-80 md:h-80 lg:w-96 lg:h-96 object-cover rounded-md"
-              />
-              <p data-tina-field={tinaField(section, "imageCaption")} className="mt-1 text-sm text-gray-700 text-center mx-auto max-w-md">{section.imageCaption}</p>
-            </div>
-            <div data-tina-field={tinaField(section, "text")} className="mt-5 md:mt-1 prose text-center mx-auto md:text-left md:mx-0 max-w-lg">
-              <TinaMarkdown content={section.text} />
-            </div>
+          <div className="mt-10 grid sm:grid-cols-2 md:grid-cols-3 gap-y-10">
+            {project.gallerySections?.map((section, idx) => (
+              <div key={section.image}>
+                <img
+                  data-tina-field={tinaField(section, "image")}
+                  src={section.image}
+                  alt={section.imageAlt}
+                  className="w-full h-72 md:h-80 mx-auto max-w-md md:max-w-none object-cover rounded-md"
+                />
+                <p data-tina-field={tinaField(section, "imageCaption")} className="mt-1 text-sm text-gray-700 text-center mx-auto max-w-md">{section.imageCaption}</p>
+
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </section>
+      }
+
+      {/* Write-up */}
+      { project.writeUpSections &&
+        <section className="mt-10 ">
+          <h2 data-tina-field={tinaField(project, "writeUpHeading")} className="text-4xl font-['Latin_Modern_Roman'] text-center">{project.writeUpHeading}</h2>
+
+          <div className="mt-10 flex flex-col gap-y-16 md:gap-y-20">
+            {project.writeUpSections?.map((section, idx) => (
+              <div key={section.image} className={`md:flex gap-x-8 ${idx % 2 == 0 ? 'md:flex-row-reverse' : ''}`}>
+                <div>
+                  <img
+                    data-tina-field={tinaField(section, "image")}
+                    src={section.image}
+                    alt={section.imageAlt}
+                    className="shrink-0 w-full h-72 mx-auto max-w-md md:max-w-none md:w-80 md:h-80 lg:w-96 lg:h-96 object-cover rounded-md"
+                  />
+                  <p data-tina-field={tinaField(section, "imageCaption")} className="mt-1 text-sm text-gray-700 text-center mx-auto max-w-md">{section.imageCaption}</p>
+                </div>
+                <div data-tina-field={tinaField(section, "text")} className="mt-5 md:mt-1 prose text-center mx-auto md:text-left md:mx-0 max-w-lg">
+                  <TinaMarkdown content={section.text} />
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      }
 
     </PageWrapper>
   );
