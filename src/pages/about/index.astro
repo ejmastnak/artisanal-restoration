@@ -14,6 +14,19 @@ await optimizeTinaImages(content, [
     width: 800,
   },
 ]);
+
+if (content.data.aboutPage.portfolioFeaturedProjects) {
+  const imagesToOptimize = content.data.aboutPage.portfolioFeaturedProjects.map((project, idx) => {
+    return {
+      srcPath: ['data', 'aboutPage', 'portfolioFeaturedProjects', `${idx}`, 'project', 'featuredImage'],
+      altPath: ['data', 'aboutPage', 'portfolioFeaturedProjects', `${idx}`, 'project', 'featuredImageAlt'],
+      width: 800,
+      idx: idx,
+    }
+  });
+  await optimizeTinaImages(content, imagesToOptimize);
+}
+
 ---
 
 <BaseLayout head={head}>
