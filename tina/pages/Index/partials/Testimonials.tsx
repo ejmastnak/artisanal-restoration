@@ -16,7 +16,7 @@ export default function Testimonials({ homePage, }: Props) {
       <p data-tina-field={tinaField(homePage, "testimonialsDescription")} className="mt-10 prose">{homePage.testimonialsDescription}</p>
 
       <ul className="mt-10 ml-5 space-y-8">
-        {homePage.featuredTestimonials.map((testimonial, idx) => (
+        {homePage.featuredTestimonials.filter((testimonial) => !!testimonial.testimonial).map((testimonial, idx) => (
           <li data-tina-field={tinaField(testimonial, "testimonial")} key={testimonial.testimonial.id}>
             <Testimonial client={testimonial.testimonial.client} reverse={idx % 2 == 0 ? false : true}>
               <div className="prose">

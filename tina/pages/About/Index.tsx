@@ -88,7 +88,7 @@ export default function AboutPage(props: Props) {
         </div>
 
         <div className="mt-5 grid grid-cols-1 md:grid-cols-3 gap-5 mx-auto">
-          {aboutPage.portfolioFeaturedProjects.map((project, idx) => (
+          {aboutPage.portfolioFeaturedProjects.filter((project) => !!project.project).map((project, idx) => (
             <a key={project.project.id} data-tina-field={tinaField(project, "project")} href={`/portfolio/${project.project._sys.filename}`} className={`rounded-md overflow-clip hover:outline hover:outline-2 hover:outline-orange-900 hover:shadow-lg ${idx > 0 ? 'hidden md:block' : ''}`}>
               <img
                 src={project.project.featuredImage}
