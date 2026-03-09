@@ -71,5 +71,36 @@ export const PortfolioPageCollection: Collection = {
       description: "The text to display on links to see more about a featured project.",
       type: "string",
     },
+    {
+      name: 'featuredProjects',
+      label: 'Featured projects',
+      description: 'Use this field to add and rearrange featured projects',
+      type: 'object',
+      list: true,
+      ui: {
+        itemProps: (item) => {
+          return { label: item.project.replace(/^tina\/content\/projects\//, "") };
+        },
+      },
+      fields: [
+        {
+          name: 'project',
+          label: 'Project',
+          type: 'reference',
+          collections: ['project'],
+          // Display the `title` field of the referenced project
+          ui: {
+            optionComponent: (
+              props: {
+                title: string,
+              },
+              _internalSys: { path: string }
+            ) => {
+              return props.title;
+            }
+          }
+        }
+      ],
+    },
   ],
 };

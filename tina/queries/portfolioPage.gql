@@ -31,4 +31,34 @@ fragment MyPortfolioPageParts on PortfolioPage {
   includesGalleryText
   includesWriteUpText
   includesGalleryAndWriteUpText
+  featuredProjects {
+    __typename
+    project {
+      ... on Project {
+        __typename
+        title
+        summary
+        featuredImage
+        featuredImageAlt
+        gallerySections {
+          __typename
+        }
+        writeUpSections {
+          __typename
+        }
+      }
+      ... on Document {
+        _sys {
+          filename
+          basename
+          hasReferences
+          breadcrumbs
+          path
+          relativePath
+          extension
+        }
+        id
+      }
+    }
+  }
 }

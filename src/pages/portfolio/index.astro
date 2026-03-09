@@ -7,37 +7,20 @@ import { optimizeTinaImages } from '@/lib/optimizeTinaImages';
 const content = await client.queries.myPortfolioPage({ relativePath: "index.json" });
 const head = content.data.portfolioPage.head;
 
-const projectsResponse = await client.queries.projectConnection();
-const projects = projectsResponse.data.projectConnection.edges?.map((edge) => edge.node);
-
-const projectRank = (p) => {
-  const hasWrite = p.writeUpSections !== null;
-  const hasGallery = p.gallerySections !== null;
-
-  if (hasWrite && hasGallery) return 0; // both
-  if (hasWrite) return 1;               // writeUp only
-  if (hasGallery) return 2;             // gallery only
-  return 3;                             // neither
-};
-
-const sortedProjects = projects.sort((a, b) => {
-  const rankDiff = projectRank(a) - projectRank(b);
-  if (rankDiff !== 0) return rankDiff;
-  return a.title.localeCompare(b.title);
-});
-
-const imagesToOptimize = projects.map((project, idx) => {
-  return {
-    srcPath: [`${idx}`, 'featuredImage'],
-    altPath: [`${idx}`, 'featuredImageAlt'],
-    width: 800,
-    idx: idx,
-  }
-});
-await optimizeTinaImages(projects, imagesToOptimize);
+if (content.data.portfolioPage.featuredProjects) {
+  const imagesToOptimize = content.data.portfolioPage.featuredProjects.map((project, idx) => {
+    return {
+      srcPath: ['data', 'portfolioPage', 'featuredProjects', `${idx}`, 'project', 'featuredImage'],
+      altPath: ['data', 'portfolioPage', 'featuredProjects', `${idx}`, 'project', 'featuredImageAlt'],
+      width: 800,
+      idx: idx,
+    }
+  });
+  await optimizeTinaImages(content, imagesToOptimize);
+}
 
 ---
 
 <BaseLayout head={head}>
-  <Portfolio projects={sortedProjects} {...content} client:tina />
+  <Portfolio {...content} client:tina />
 </BaseLayout>
