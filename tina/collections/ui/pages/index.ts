@@ -149,7 +149,7 @@ export const HomePageCollection: Collection = {
       list: true,
       ui: {
         itemProps: (item) => {
-          return { label: item.testimonial.replace(/^tina\/content\/testimonials\//, "") };
+          return { label: item.testimonial?.replace(/^tina\/content\/testimonials\//, "") };
         },
       },
       fields: [

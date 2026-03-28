@@ -24,6 +24,9 @@
     },
     {
       "project": "tina/content/projects/deck-restoration.json"
+    },
+    {
+      "project": "tina/content/projects/new-deck-build.json"
     }
   ]
 }

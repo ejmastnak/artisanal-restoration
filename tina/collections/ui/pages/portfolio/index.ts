@@ -79,7 +79,7 @@ export const PortfolioPageCollection: Collection = {
       list: true,
       ui: {
         itemProps: (item) => {
-          return { label: item.project.replace(/^tina\/content\/projects\//, "") };
+          return { label: item.project?.replace(/^tina\/content\/projects\//, "") };
         },
       },
       fields: [
