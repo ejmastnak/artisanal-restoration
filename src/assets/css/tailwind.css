@@ -15,4 +15,39 @@
   .clip-wave-top-condensed {
     clip-path: url(#clipWaveTopCondensed);
   }
+
+  .clip-zigzag-bottom {
+    clip-path: polygon(100% 0, 100% 89%, 33% 100%, 0 91%, 0 0);
+  }
+
+  .clip-zigzag-bottom-condensed {
+    clip-path: polygon(100% 0, 100% 95%, 33% 100%, 0 96%, 0 0);
+  }
+
+  .clip-zigzag-bottom-extra-condensed {
+    clip-path: polygon(100% 0, 100% 98%, 33% 100%, 0 98%, 0 0);
+  }
+
+  .clip-zigzag-top {
+    clip-path: polygon(33% 11%, 100% 0%, 100% 100%, 0 100%, 0 2%);
+  }
+
+  .clip-zigzag-top-condensed {
+    /* clip-path: polygon(0 0, 100% 0, 100% 5%, 66% 0%, 0 4%); */
+
+    clip-path: polygon(
+      0 4%,
+      33% 0%,
+      66% 4%,
+      100% 0%,
+      100% 100%,
+      0 100%
+    );
+
+  }
+
+  .clip-zigzag-top-extra-condensed {
+    clip-path: polygon(0 0, 100% 0, 100% 2%, 66% 0%, 0 2%);
+  }
+
 }

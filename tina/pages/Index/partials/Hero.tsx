@@ -17,7 +17,7 @@ export default function Hero({ homePage }: Props) {
 
   return (
     <div
-      className="px-5 sm:px-8 pt-8 sm:pt-12 md:pt-24 pb-32 md:pb-48 bg-theme-brown w-full text-white clip-wave-bottom-condensed md:clip-wave-bottom"
+      className="px-5 sm:px-8 pt-8 sm:pt-12 md:pt-24 pb-24 md:pb-36 bg-theme-brown w-full text-white clip-zigzag-bottom-extra-condensed xxxs:clip-zigzag-bottom-condensed md:clip-zigzag-bottom"
     >
 
       {/* Mobile */}
